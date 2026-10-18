@@ -37,6 +37,10 @@ def build_fields(story: dict, platforms: list[str], user: str, schedule: str | N
                    ("privacyStatus", "public"), ("categoryId", "27"),  # Éducation
                    ("defaultLanguage", "fr"), ("defaultAudioLanguage", "fr-FR")]
         fields += [("tags[]", t.lstrip("#")) for t in tags[:15]]
+    if "tiktok" in platforms:
+        fields += [("tiktok_title", caption[:2200])]
+    if "facebook" in platforms:
+        fields += [("facebook_title", caption[:2000]), ("facebook_description", caption[:5000])]
     if "linkedin" in platforms:
         fields += [("linkedin_title", li_text[:200]), ("linkedin_description", li_text[:3000]),
                    ("visibility", "PUBLIC")]

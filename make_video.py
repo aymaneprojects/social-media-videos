@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 from pixelstory import brand as brands
-from pixelstory import cover, images, publish, topics as topicbank, voice, writer
+from pixelstory import cover, images, logo, publish, topics as topicbank, voice, writer
 from pixelstory.anim import writer as anim_writer
 from pixelstory.config import ROOT, Config
 from pixelstory.anim.render import render_anim
@@ -114,6 +114,9 @@ def do_publish(out_dir: Path, story: dict, b: dict, cfg: Config, args):
     pub = b.get("publish", {})
     platforms = [p.strip() for p in (args.platforms or ",".join(pub.get("platforms", []))).split(",") if p.strip()]
     user = cfg.upload_post_user or pub.get("user", "")
+    if not platforms:
+        print(f"⏸️  {b['name']} : aucun compte connecté dans Upload-Post, vidéo gardée sans publication.")
+        return
     if args.dry_run:
         print("🧪 Simulation : champs envoyés à Upload-Post")
         for k, v in publish.build_fields(story, platforms, user, args.schedule, pub.get("timezone"), args.queue):
@@ -150,6 +153,7 @@ def main():
     src.add_argument("--find-topics", type=int, metavar="N",
                      help="cherche N nouveaux sujets et les ajoute à la banque du domaine")
     src.add_argument("--publish-only", metavar="DOSSIER", help="publie une vidéo déjà rendue (output/...)")
+    src.add_argument("--logos", action="store_true", help="génère les logos de profil de toutes les marques")
     ap.add_argument("--brand", help="marque (dossier de brands/), défaut : nourlio")
     ap.add_argument("--domain", help="domaine de la marque (nutrition, sport, sante, business...)")
     ap.add_argument("--format", default="anim", choices=["anim", "hud"],
@@ -171,6 +175,12 @@ def main():
     ap.add_argument("--force", action="store_true", help="republie même si déjà publié")
     args = ap.parse_args()
     cfg = Config.load()
+
+    if args.logos:
+        for slug_ in brands.available():
+            for p in logo.make_logos(brands.load_brand(slug_)):
+                print("🖼️ ", p)
+        return
 
     if args.publish_only:
         d = Path(args.publish_only)

@@ -37,12 +37,9 @@
   },
   "publish": {
     "user": "pileouface",
-    "platforms": [
-      "instagram",
-      "youtube",
-      "linkedin"
-    ],
-    "timezone": "Europe/Paris"
+    "platforms": [],
+    "timezone": "Europe/Paris",
+    "note": "aucun compte connecté pour l'instant : renseigner user et platforms quand le profil Upload-Post existe"
   },
   "openrouter_voice": "george"
 }

@@ -69,11 +69,12 @@
     }
   },
   "publish": {
-    "user": "nourlio",
+    "user": "default",
     "platforms": [
       "instagram",
       "youtube",
-      "linkedin"
+      "tiktok",
+      "facebook"
     ],
     "timezone": "Europe/Paris"
   },
