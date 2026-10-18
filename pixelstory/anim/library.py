@@ -72,10 +72,14 @@ def person(d: ImageDraw.ImageDraw, el: dict, x: float, y: float):
         R(3, 15, 8, 1, "black")
         R(4, 12, 1, 1, "yellow")
         R(9, 12, 1, 1, "yellow")
-    if el.get("build") == "large":  # silhouette corpulente : torse et ventre élargis
-        R(1, 12, 12, 10 if not long_ else 12, top)
-        R(12, 12, 1, 10, topd)
-        R(2, 20, 10, 2, top)
+    large = el.get("build") == "large"
+    if large:  # silhouette corpulente : torse, ventre et jambes élargis
+        R(0, 11, 14, 11 if not long_ else 13, top)
+        R(13, 11, 1, 11, topd)
+        R(1, 21, 12, 2, top)
+        R(3, 20, 4, 8, pants)
+        R(7, 20, 4, 8, pants)
+        R(3, 9, 8, 2, skin)  # double menton
     # bras
     if pose == "arms_up":
         R(1, 4, 2, 8, top)
@@ -104,10 +108,11 @@ def person(d: ImageDraw.ImageDraw, el: dict, x: float, y: float):
         R(11, 18, 2, 2, skin)
     else:
         swing = int(math.sin(gt * 10) * 1) if pose == "walk" else 0
-        R(1, 11 + swing, 2, 8, top)
-        R(11, 11 - swing, 2, 8, top)
-        R(1, 19 + swing, 2, 2, skin)
-        R(11, 19 - swing, 2, 2, skin)
+        ax0, ax1 = (-2, 14) if large else (1, 11)
+        R(ax0, 11 + swing, 2, 8, top)
+        R(ax1, 11 - swing, 2, 8, top)
+        R(ax0, 19 + swing, 2, 2, skin)
+        R(ax1, 19 - swing, 2, 2, skin)
     # cou + tête
     R(6, 10, 2, 1, skin)
     R(4, 2, 6, 8, skin)
@@ -423,8 +428,12 @@ def _calendar(d, x, y, s, c, cd, cl, ink, el, gt):
     w, h = 40 * s, 36 * s
     d.rectangle([x - w / 2, y - h / 2, x + w / 2, y + h / 2], fill=color("paper"))
     d.rectangle([x - w / 2, y - h / 2, x + w / 2, y - h / 2 + 9 * s], fill=color(el.get("color", "red")))
-    from ..gfx import font
-    d.text((x, y + 4 * s), str(el.get("text", "1925")), font=font("pixelify-bold", int(14 * s)), fill=ink, anchor="mm")
+    from ..gfx import font, text_size
+    txt = str(el.get("text", "1925"))
+    fs = int(14 * s)
+    while fs > 8 and text_size(txt, font("pixelify-bold", fs))[0] > w - 6:
+        fs -= 1
+    d.text((x, y + 4 * s), txt, font=font("pixelify-bold", fs), fill=ink, anchor="mm")
     for k in (-10, 10):
         d.rectangle([x + k * s - 1, y - h / 2 - 3, x + k * s + 1, y - h / 2 + 3], fill=color("grey2"))
 

@@ -50,8 +50,9 @@ class Config:
             board_model=g("OPENROUTER_BOARD_MODEL", g("OPENROUTER_WRITER_MODEL", "anthropic/claude-sonnet-5.5")),
             image_model=g("OPENROUTER_IMAGE_MODEL", "google/gemini-3.1-flash-image"),
             # Voix ElevenLabs servie par OpenRouter (/api/v1/audio/speech)
-            tts_model=g("OPENROUTER_TTS_MODEL", "elevenlabs/eleven-multilingual-v2"),
-            tts_voice=g("OPENROUTER_TTS_VOICE", "daniel"),
+            tts_model=g("OPENROUTER_TTS_MODEL", "elevenlabs/eleven-v4"),
+            # identifiant ElevenLabs de la voix « Benjamin » (accepté par OpenRouter)
+            tts_voice=g("OPENROUTER_TTS_VOICE", "zAr1POVZUrr1zkX0T94t"),
             # Optionnel : clé ElevenLabs directe (voix perso / clonées)
             elevenlabs_key=g("ELEVENLABS_API_KEY", ""),
             # Nom(s) de voix de la Voice Library (ex. Benjamin, Yarik) ou voice_id, séparés par des virgules :

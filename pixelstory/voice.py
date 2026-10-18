@@ -187,10 +187,12 @@ def openrouter(texts: list[str], out: Path, cfg: Config) -> list[Word]:
         "response_format": "mp3",
         # transmis tel quel au fournisseur ElevenLabs (ignoré s'il n'est pas reconnu)
         "provider": {"options": {"elevenlabs": {
-            "voice_settings": {"stability": cfg.voice_stability, "similarity_boost": 0.8,
-                               "style": cfg.voice_style, "use_speaker_boost": True, "speed": cfg.voice_speed},
+            "voice_settings": {"stability": cfg.voice_stability, "similarity_boost": 0.75,
+                               "style": cfg.voice_style, "use_speaker_boost": True},
         }}},
     }
+    if not any(v in cfg.tts_model for v in ("v3", "v4")):  # v3/v4 n'acceptent pas le réglage de vitesse
+        body["provider"]["options"]["elevenlabs"]["voice_settings"]["speed"] = cfg.voice_speed
     for attempt in range(4):
         r = requests.post("https://openrouter.ai/api/v1/audio/speech", json=body, timeout=300,
                           headers={"Authorization": f"Bearer {cfg.openrouter_key}", "X-Title": "pixel-stories"})
