@@ -10,8 +10,8 @@ from pathlib import Path
 from PIL import Image, ImageChops, ImageDraw
 
 from . import audio
-from .gfx import (BG, DIM, FPS, H, MAUVE, MID, PINK, SHADOW, W, WHITE, background, caption_font,
-                  draw_text, frame_box, mix, text_size, ui_font, vignette)
+from .gfx import (FPS, H, W, background, caption_font, draw_text, frame_box, mix, text_size, ui_font, vignette)
+from .theme import T
 from .scenes import SCENES, SceneContext, scene_end
 from .voice import Word
 
@@ -95,8 +95,8 @@ def draw_caption(img, d, chunk, t):
     x = W / 2 - total / 2
     for (txt, hl, w), wd in zip(parts, widths):
         pop = 3 if t - w.start < 0.07 else 0
-        col = PINK if hl else WHITE
-        d.text((x + 3, CAP_Y + 3 - pop), txt, font=f, fill=SHADOW, anchor="ls")
+        col = T.ACCENT if hl else T.WHITE
+        d.text((x + 3, CAP_Y + 3 - pop), txt, font=f, fill=T.SHADOW, anchor="ls")
         d.text((x, CAP_Y - pop), txt, font=f, fill=col, anchor="ls")
         x += wd + space
 
@@ -110,24 +110,27 @@ def _clock_seconds(s: str) -> int:
 
 
 def draw_hud(d, story, beat: Beat, beats, t, total):
-    brand = story.get("label", "HISTOIRE VRAIE").upper()
+    brand = story.get("brand_name", "NOURLIO").upper()
+    dom = story.get("domain_label", "").upper()
     num = int(story.get("number", 1))
     # coins
-    frame_box(d, (14, 84, W - 14, H - 84), PINK, 2, corners_only=True, clen=12)
-    # étiquette
+    frame_box(d, (14, 84, W - 14, H - 84), T.ACCENT, 2, corners_only=True, clen=12)
+    # étiquette : [MARQUE] DOMAINE  N°07
     f = ui_font(12)
     tw, _ = text_size(brand, f)
-    d.rectangle([26, 100, 26 + tw + 14, 118], fill=PINK)
-    d.text((33, 109), brand, font=f, fill=SHADOW, anchor="lm")
-    nt = f"N°{num:02d}"
-    nw, _ = text_size(nt, f)
+    d.rectangle([26, 100, 26 + tw + 14, 118], fill=T.ACCENT)
+    d.text((33, 109), brand, font=f, fill=T.INK, anchor="lm")
     x0 = 26 + tw + 20
-    d.rectangle([x0, 100, x0 + nw + 12, 118], outline=PINK, width=2)
-    d.text((x0 + 6, 109), nt, font=f, fill=PINK, anchor="lm")
+    if dom:
+        dw, _ = text_size(dom, f)
+        d.rectangle([x0, 100, x0 + dw + 12, 118], outline=T.ACCENT, width=2)
+        d.text((x0 + 6, 109), dom, font=f, fill=T.ACCENT, anchor="lm")
+        x0 += dw + 20
+    d.text((x0, 109), f"N°{num:02d}", font=ui_font(10), fill=T.SOFT, anchor="lm")
     # progression
-    d.text((26, 132), f"{beat.index + 1:02d}", font=ui_font(10), fill=MAUVE, anchor="lm")
-    d.rectangle([46, 127, 186, 137], outline=PINK, width=1)
-    d.rectangle([48, 129, 48 + int(136 * min(1, t / max(total, 0.1))), 135], fill=PINK)
+    d.text((26, 132), f"{beat.index + 1:02d}", font=ui_font(10), fill=T.SOFT, anchor="lm")
+    d.rectangle([46, 127, 186, 137], outline=T.ACCENT, width=1)
+    d.rectangle([48, 129, 48 + int(136 * min(1, t / max(total, 0.1))), 135], fill=T.ACCENT)
     # horloge (saute quand un beat définit 'clock', sinon tourne en temps réel)
     base_s, base_t = _clock_seconds(story.get("clock_start", "00:00:00")), 0.0
     for b in beats:
@@ -137,14 +140,14 @@ def draw_hud(d, story, beat: Beat, beats, t, total):
             base_s, base_t = _clock_seconds(b.clock), b.start
     sec = int(base_s + (t - base_t))
     clock = f"{(sec // 3600) % 100:02d}:{(sec // 60) % 60:02d}:{sec % 60:02d}"
-    d.text((W - 26, 109), clock, font=ui_font(14), fill=WHITE, anchor="rm")
+    d.text((W - 26, 109), clock, font=ui_font(14), fill=T.WHITE, anchor="rm")
     if story.get("location"):
-        d.text((W - 26, 126), story["location"].upper(), font=ui_font(8), fill=MID, anchor="rm")
+        d.text((W - 26, 126), story["location"].upper(), font=ui_font(8), fill=T.MID, anchor="rm")
     if (t * 1.2) % 1 < 0.5:
-        d.rectangle([W - 30 - text_size(clock, ui_font(14))[0] - 10, 106, W - 30 - text_size(clock, ui_font(14))[0] - 6, 110], fill=PINK)
+        d.rectangle([W - 30 - text_size(clock, ui_font(14))[0] - 10, 106, W - 30 - text_size(clock, ui_font(14))[0] - 6, 110], fill=T.ACCENT)
     handle = story.get("handle")
     if handle:
-        d.text((W - 26, H - 100), handle, font=ui_font(8), fill=DIM, anchor="rm")
+        d.text((W - 26, H - 100), handle, font=ui_font(8), fill=T.DIM, anchor="rm")
 
 
 def glitch(img: Image.Image, strength: float, seed: int) -> Image.Image:
@@ -157,7 +160,7 @@ def glitch(img: Image.Image, strength: float, seed: int) -> Image.Image:
         band = img.crop((0, y, W, y + h))
         out.paste(band, (dx, y))
         if rnd.random() < 0.4:
-            tint = Image.new("RGB", (W, h), PINK)
+            tint = Image.new("RGB", (W, h), T.ACCENT)
             out.paste(Image.blend(band, tint, 0.35), (dx, y))
     return out
 
@@ -214,8 +217,7 @@ def render_video(story: dict, voice_path: Path, words: list[Word], duration: flo
                 img = background("dots").copy()
                 d = ImageDraw.Draw(img)
                 d.fontmode = "1"
-                scene_end(img, d, {}, t - total, END_CARD, SceneContext(),
-                          brand=story.get("label", "HISTOIRE VRAIE"), number=int(story.get("number", 1)))
+                scene_end(img, d, story, t - total, END_CARD, SceneContext())
                 img = ImageChops.multiply(img, ov)
                 proc.stdin.write(img.tobytes())
                 continue

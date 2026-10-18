@@ -1,5 +1,5 @@
 """Illustrations : génération via OpenRouter puis conversion au style maison
-(pixelisation + tramage ordonné + recoloration dans la rampe magenta)."""
+(pixelisation + tramage ordonné + recoloration dans la rampe du thème actif)."""
 from __future__ import annotations
 
 import base64
@@ -13,8 +13,8 @@ import requests
 from PIL import Image, ImageOps
 
 from .config import Config
-from .gfx import RAMP
 from .scenes import PX0, PX1, PY0, PY1
+from .theme import T
 
 PANEL = (PX1 - PX0, PY1 - PY0)
 BLOCK = 3  # 1 « gros pixel » = 3 px internes = 6 px en 1080p
@@ -32,10 +32,10 @@ def stylize(im: Image.Image, size=PANEL, block=BLOCK) -> Image.Image:
     g = ImageOps.fit(im.convert("L"), small, Image.LANCZOS, centering=(0.5, 0.45))
     g = ImageOps.autocontrast(g, cutoff=2)
     a = np.asarray(g, dtype=np.float32) / 255.0
-    n = len(RAMP)
+    n = len(T.RAMP)
     by = np.tile(BAYER, (small[1] // 4 + 1, small[0] // 4 + 1))[: small[1], : small[0]]
     lvl = np.clip(np.floor(a * (n - 1) + 0.5 + by * 0.9), 0, n - 1).astype(np.int32)
-    pal = np.array(RAMP, dtype=np.uint8)
+    pal = np.array(T.RAMP, dtype=np.uint8)
     return Image.fromarray(pal[lvl], "RGB")
 
 

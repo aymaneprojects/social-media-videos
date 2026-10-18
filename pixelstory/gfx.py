@@ -12,28 +12,12 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
+from .theme import T
+
 W, H = 540, 960
 FPS = 30
 ROOT = Path(__file__).resolve().parent.parent
 FONTS = ROOT / "assets" / "fonts"
-
-# --- Palette monochrome magenta -------------------------------------------
-BG = (19, 9, 19)
-BG2 = (30, 13, 29)
-GRID = (44, 19, 40)
-DIM = (72, 34, 64)
-MID = (118, 58, 102)
-MAUVE = (172, 124, 160)
-PINK = (255, 62, 138)
-PINK2 = (255, 122, 176)
-PALE = (246, 222, 236)
-WHITE = (252, 244, 248)
-SHADOW = (8, 3, 8)
-
-# Rampe utilisée pour recolorer les illustrations générées (du noir au rose pâle)
-RAMP = [BG, (40, 16, 37), (74, 30, 64), (122, 44, 98), (190, 54, 124),
-        (255, 70, 145), (255, 140, 190), (255, 214, 232)]
-
 
 @lru_cache(maxsize=64)
 def font(name: str, size: int) -> ImageFont.FreeTypeFont:
@@ -84,8 +68,10 @@ def text_size(txt, fnt):
     return r - l, b - t
 
 
-def draw_text(d: ImageDraw.ImageDraw, xy, txt, fnt, fill=WHITE, anchor="la",
-              shadow=True, shadow_col=SHADOW, offset=2):
+def draw_text(d: ImageDraw.ImageDraw, xy, txt, fnt, fill=None, anchor="la",
+              shadow=True, shadow_col=None, offset=2):
+    fill = fill or T.WHITE
+    shadow_col = shadow_col or T.SHADOW
     if shadow:
         d.text((xy[0] + offset, xy[1] + offset), txt, font=fnt, fill=shadow_col, anchor=anchor)
     d.text(xy, txt, font=fnt, fill=fill, anchor=anchor)
@@ -112,7 +98,8 @@ def wrap(txt, fnt, max_w):
 
 
 # --- Formes ------------------------------------------------------------------
-def frame_box(d, box, col=PINK, width=2, corners_only=False, clen=10):
+def frame_box(d, box, col=None, width=2, corners_only=False, clen=10):
+    col = col or T.ACCENT
     x0, y0, x1, y1 = box
     if not corners_only:
         d.rectangle(box, outline=col, width=width)
@@ -122,7 +109,8 @@ def frame_box(d, box, col=PINK, width=2, corners_only=False, clen=10):
         d.rectangle([cx - (width // 2), min(cy, cy + sy * clen), cx + (width - 1) // 2, max(cy, cy + sy * clen)], fill=col)
 
 
-def dotted_hline(d, x0, x1, y, col=DIM, step=4):
+def dotted_hline(d, x0, x1, y, col=None, step=4):
+    col = col or T.DIM
     for x in range(int(x0), int(x1), step):
         d.point((x, y), fill=col)
 
@@ -399,6 +387,68 @@ ICONS = {
         ".#......#.",
         "..######..",
     ],
+    "dollar": [
+        "...#...",
+        ".#####.",
+        "#..#...",
+        "#..#...",
+        ".####..",
+        "...#.#.",
+        "...#..#",
+        "...#..#",
+        "#####..",
+        "...#...",
+    ],
+    "chart": [
+        "..........#",
+        ".........##",
+        "....#...#.#",
+        "...#.#.#...",
+        "..#...#....",
+        ".#.........",
+        "#..........",
+        "###########",
+    ],
+    "coin": [
+        "..####..",
+        ".#++++#.",
+        "#++##++#",
+        "#+#++#+#",
+        "#+#++#+#",
+        "#++##++#",
+        ".#++++#.",
+        "..####..",
+    ],
+    "building": [
+        "..######..",
+        "..#+#+##..",
+        "..######..",
+        "..#+#+##..",
+        "..######..",
+        "..#+#+##..",
+        "..######..",
+        "##########",
+    ],
+    "dna": [
+        "#.....#",
+        ".#...#.",
+        "..#+#..",
+        "...#...",
+        "..#+#..",
+        ".#...#.",
+        "#.....#",
+        ".#...#.",
+        "..#+#..",
+        "...#...",
+    ],
+    "bed": [
+        "#...........",
+        "#.##........",
+        "#.##.#######",
+        "############",
+        "#..........#",
+        "#..........#",
+    ],
     "brain": [
         "..##.##...",
         ".#..#..##.",
@@ -417,14 +467,15 @@ def icon_size(name, scale):
     return max(len(r) for r in rows) * scale, len(rows) * scale
 
 
-def draw_icon(d, name, x, y, scale=4, col=PINK, accent=None, anchor="mm"):
+def draw_icon(d, name, x, y, scale=4, col=None, accent=None, anchor="mm"):
+    col = col or T.ACCENT
     rows = ICONS.get(name, ICONS["person"])
     w, h = icon_size(name, scale)
     if anchor == "mm":
         x, y = x - w // 2, y - h // 2
     elif anchor == "mb":
         x, y = x - w // 2, y - h
-    accent = accent or mix(col, WHITE, 0.55)
+    accent = accent or mix(col, T.WHITE, 0.55)
     for j, row in enumerate(rows):
         for i, ch in enumerate(row):
             if ch == "#":
@@ -440,22 +491,22 @@ def draw_icon(d, name, x, y, scale=4, col=PINK, accent=None, anchor="mm"):
 # --- Fond --------------------------------------------------------------------
 @lru_cache(maxsize=8)
 def background(style: str = "dots") -> Image.Image:
-    img = Image.new("RGB", (W, H), BG)
+    img = Image.new("RGB", (W, H), T.BG)
     d = ImageDraw.Draw(img)
     # dégradé vertical très léger
     for y in range(H):
         t = abs(y - H * 0.38) / H
-        d.line([(0, y), (W, y)], fill=mix(BG2, BG, min(1, t * 2.2)))
+        d.line([(0, y), (W, y)], fill=mix(T.BG2, T.BG, min(1, t * 2.2)))
     if style == "grid":
         for x in range(0, W, 30):
-            d.line([(x, 0), (x, H)], fill=GRID)
+            d.line([(x, 0), (x, H)], fill=T.GRID)
         for y in range(0, H, 30):
-            d.line([(0, y), (W, y)], fill=GRID)
+            d.line([(0, y), (W, y)], fill=T.GRID)
     elif style == "dots":
         for y in range(0, H, 6):
             for x in range(0, W, 6):
                 if ((x // 6) + (y // 6)) % 2 == 0:
-                    d.point((x, y), fill=mix(GRID, BG, 0.4))
+                    d.point((x, y), fill=mix(T.GRID, T.BG, 0.4))
     return img
 
 

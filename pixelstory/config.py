@@ -33,8 +33,8 @@ class Config:
     voice_stability: float
     voice_style: float
     voice_speed: float
-    brand: str
-    handle: str
+    upload_post_key: str
+    upload_post_user: str
     edge_voice: str
 
     @classmethod
@@ -57,7 +57,8 @@ class Config:
             voice_stability=float(g("ELEVENLABS_STABILITY", "0.45")),
             voice_style=float(g("ELEVENLABS_STYLE", "0.35")),
             voice_speed=float(g("ELEVENLABS_SPEED", "1.05")),
-            brand=g("BRAND_LABEL", "HISTOIRE VRAIE"),
-            handle=g("BRAND_HANDLE", ""),
+            upload_post_key=g("UPLOAD_POST_API_KEY", ""),
+            # Profil Upload-Post : sinon celui défini dans brands/<marque>/brand.json
+            upload_post_user=g("UPLOAD_POST_USER", ""),
             edge_voice=g("EDGE_VOICE", "fr-FR-HenriNeural"),
         )

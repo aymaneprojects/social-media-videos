@@ -22,10 +22,9 @@ EXEMPLE 3 (63 s) :
 Il y a 212 ans, jour pour jour, Londres a été frappée par une vague. / Une vague de bière. / 17 octobre 1814. / Dans le quartier de St Giles, l'un des plus pauvres de la ville, se dresse la brasserie Meux. / À l'intérieur, une cuve géante de 7 mètres de haut. / Elle contient plus de 600 000 litres de bière brune. / Ce jour-là, un cerclage de fer cède. / Personne ne s'inquiète. / Une heure plus tard, la cuve explose. / Le choc fait éclater les cuves voisines. / Au total, près d'un million et demi de litres jaillissent d'un coup. / Le mur de la brasserie s'effondre. / Une vague brune de plusieurs mètres déferle dans les ruelles. / Les maisons sont inondées jusqu'aux caves, où vivent des familles entières. / Dans l'une d'elles, des proches sont réunis pour veiller un petit garçon mort la veille. / 8 personnes meurent, noyées dans la bière. / Le procès a lieu peu après. / Le verdict ? / Un acte de Dieu. / Personne n'est responsable. / Mieux encore : la brasserie se fait rembourser les taxes sur la bière perdue. / Et le quartier, lui, a gardé l'odeur pendant des mois.
 """
 
-SYSTEM = f"""Tu es le scénariste d'une série de vidéos verticales (Reels, TikTok, Shorts) en français :
-des HISTOIRES VRAIES racontées en ~60 secondes, en pixel art, thème NUTRITION & SPORT
-(exploits sportifs, records, expériences scientifiques sur l'alimentation, régimes extrêmes,
-scandales de dopage, découvertes de vitamines, coulisses de compétitions...).
+SYSTEM_TEMPLATE = """Tu es le scénariste de la marque {brand} : une série de vidéos verticales (Reels, Shorts) en français,
+des HISTOIRES VRAIES racontées en ~60 secondes, en pixel art.
+Domaine de cet épisode : {domain} ({focus}).
 
 LA FORMULE NARRATIVE (à respecter strictement, c'est elle qui fait le succès) :
 1. ACCROCHE : la 1re phrase balance le fait le plus fou ou une tension immédiate, sans contexte.
@@ -43,11 +42,12 @@ LA FORMULE NARRATIVE (à respecter strictement, c'est elle qui fait le succès) 
 - Faits EXACTS uniquement. Si un détail est incertain ou légendaire, ne l'utilise pas ou dis-le.
 
 Voici trois scripts de la série (même formule, autres thèmes) :
-{REFERENCE_SCRIPTS}
+{refs}
 
 DÉCOUPAGE VISUEL : chaque beat (= une phrase ou un fragment) a une scène animée en pixel art.
 Scènes disponibles (type {{paramètres}}) :
-{SCENE_DOCS}
+{scenes}
+Icônes à privilégier pour ce domaine : {icons}
 Règles visuelles :
 - Ne répète jamais le même type deux beats de suite. Varie beaucoup.
 - Le 2e beat est en général une scène « date ». Le protagoniste a une scène « profile ».
@@ -69,8 +69,10 @@ RÉPONDS UNIQUEMENT avec un objet JSON valide :
   "beats": [
     {{"text": "...", "highlight": ["..."], "scene": {{"type": "...", ...}}, "image": "...optionnel..."}}
   ],
-  "post": {{"caption": "légende du post (2-3 phrases, accroche + question pour les commentaires)",
-            "hashtags": ["#..."]}},
+  "post": {{"caption": "légende Instagram (2-3 phrases, accroche + question pour les commentaires)",
+            "youtube_title": "titre YouTube Shorts accrocheur, 70 caractères max, sans hashtag",
+            "linkedin_text": "texte LinkedIn : 3 à 5 lignes courtes, l'histoire en une phrase puis la leçon à en tirer (ton professionnel, sans emoji excessif)",
+            "hashtags": ["#... (6 à 10, en français, liés au domaine)"]}},
   "sources": ["références (livre, article, archive) qui appuient les faits"]
 }}"""
 
@@ -110,8 +112,13 @@ def word_count(story: dict) -> int:
     return sum(len(b["text"].split()) for b in story["beats"])
 
 
-def write_story(topic: str, cfg: Config, verify: bool = True) -> dict:
-    msgs = [{"role": "system", "content": SYSTEM},
+def build_system(brand: dict, dom: dict) -> str:
+    return SYSTEM_TEMPLATE.format(brand=brand["name"], domain=dom["label"], focus=dom["focus"],
+                                  refs=REFERENCE_SCRIPTS, scenes=SCENE_DOCS, icons=", ".join(dom.get("icons", [])))
+
+
+def write_story(topic: str, cfg: Config, brand: dict, dom: dict, verify: bool = True) -> dict:
+    msgs = [{"role": "system", "content": build_system(brand, dom)},
             {"role": "user", "content": f"Sujet : {topic}\nÉcris le script JSON."}]
     story = _parse_json(_chat(cfg, msgs))
     n = word_count(story)
@@ -126,8 +133,8 @@ def write_story(topic: str, cfg: Config, verify: bool = True) -> dict:
     return story
 
 
-def suggest_topics(cfg: Config, n: int = 20, exclude: list[str] = ()) -> list[str]:
-    prompt = (f"Propose {n} histoires vraies, peu connues et vérifiables, sur le thème nutrition & sport, "
+def suggest_topics(cfg: Config, dom: dict, n: int = 20, exclude: list[str] = ()) -> list[str]:
+    prompt = (f"Propose {n} histoires vraies, peu connues et vérifiables, domaine {dom['label']} ({dom['focus']}), "
               "parfaites pour la formule (accroche choc, date, protagoniste, escalade, retournement, chute ironique). "
               f"Évite : {', '.join(exclude) or 'rien'}. "
               'Réponds en JSON : {"topics": ["Nom — année — l\'idée en une phrase", ...]}')
