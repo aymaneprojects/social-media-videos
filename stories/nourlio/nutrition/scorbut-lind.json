@@ -1,0 +1,1791 @@
+{
+ "format": "anim",
+ "brand": "nourlio",
+ "domain": "nutrition",
+ "id": "scorbut-lind",
+ "title": "James Lind, le citron et le scorbut (1747)",
+ "beats": [
+  {
+   "text": "Ce citron a sauvé plus de marins que tous les canons de la Royal Navy.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 55,
+      "y": 160,
+      "r": 40
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 48,
+      "y": 160,
+      "size": 3.2,
+      "loop": "float"
+     },
+     {
+      "type": "text",
+      "text": "VS",
+      "x": 92,
+      "y": 160,
+      "size": 16,
+      "color": "soft",
+      "at": "w7"
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "................",
+       "..##########++..",
+       ".############+..",
+       "..##########++..",
+       "...bbbbbbb......",
+       "..bbbbbbbbb.....",
+       "..oo.....oo.....",
+       "..oo.....oo....."
+      ],
+      "colors": {
+       "#": "grey2",
+       "+": "steel",
+       "b": "brown",
+       "o": "black"
+      },
+      "px": 4,
+      "x": 138,
+      "y": 160,
+      "at": "w10",
+      "in": "slide_r"
+     },
+     {
+      "type": "obj",
+      "name": "cross",
+      "x": 138,
+      "y": 160,
+      "size": 2.2,
+      "at": "w13",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Vous pensez sûrement qu'en mer, on mourait au combat.",
+   "shot": {
+    "bg": "stars",
+    "els": [
+     {
+      "type": "obj",
+      "name": "wave",
+      "x": 90,
+      "y": 215,
+      "w": 190
+     },
+     {
+      "type": "obj",
+      "name": "ship",
+      "x": 72,
+      "y": 200,
+      "size": 1.5,
+      "loop": "bob"
+     },
+     {
+      "type": "obj",
+      "name": "explosion",
+      "x": 140,
+      "y": 175,
+      "r": 12,
+      "at": "w6",
+      "in": "flash"
+     },
+     {
+      "type": "obj",
+      "name": "explosion",
+      "x": 110,
+      "y": 160,
+      "r": 8,
+      "at": "w7",
+      "in": "flash"
+     },
+     {
+      "type": "particles",
+      "kind": "smoke",
+      "x": 130,
+      "y": 175,
+      "w": 30,
+      "h": 50,
+      "color": "grey",
+      "at": "w7"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Sauf qu'au 18e siècle, le premier tueur des marins, c'est une maladie.",
+   "shot": {
+    "keep": true,
+    "els": [
+     {
+      "type": "text",
+      "text": "1ER TUEUR ?",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "accent",
+      "at": "w4",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Le scorbut.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "SCORBUT",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "red",
+      "in": "stamp"
+     },
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 190,
+      "r": 45,
+      "color": "red2"
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 90,
+      "y": 262,
+      "px": 4,
+      "loop": "shake",
+      "loop_amp": 0.6
+     }
+    ]
+   }
+  },
+  {
+   "text": "Les gencives gonflent, les dents tombent, les vieilles cicatrices se rouvrent.",
+   "shot": {
+    "keep": true,
+    "els": [
+     {
+      "type": "text",
+      "text": "GENCIVES",
+      "x": 12,
+      "y": 120,
+      "size": 8,
+      "color": "pale",
+      "at": "w1",
+      "align": "left",
+      "in": "slide_l"
+     },
+     {
+      "type": "text",
+      "text": "DENTS",
+      "x": 170,
+      "y": 150,
+      "size": 8,
+      "color": "pale",
+      "at": "w4",
+      "align": "right",
+      "in": "slide_r"
+     },
+     {
+      "type": "text",
+      "text": "CICATRICES",
+      "x": 8,
+      "y": 190,
+      "size": 8,
+      "color": "pale",
+      "at": "w8",
+      "align": "left",
+      "in": "slide_l"
+     },
+     {
+      "type": "line",
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        22,
+        10
+       ]
+      ],
+      "x": 62,
+      "y": 124,
+      "color": "red",
+      "at": "w1",
+      "in": "draw"
+     },
+     {
+      "type": "line",
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        -22,
+        8
+       ]
+      ],
+      "x": 132,
+      "y": 152,
+      "color": "red",
+      "at": "w4",
+      "in": "draw"
+     },
+     {
+      "type": "line",
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        22,
+        6
+       ]
+      ],
+      "x": 66,
+      "y": 192,
+      "color": "red",
+      "at": "w8",
+      "in": "draw"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Une expédition anglaise part avec près de 1900 hommes.",
+   "shot": {
+    "chip": "1740",
+    "els": [
+     {
+      "type": "obj",
+      "name": "crowd",
+      "x": 90,
+      "y": 210,
+      "n": 9,
+      "w": 170,
+      "tops": [
+       "blue2"
+      ]
+     },
+     {
+      "type": "counter",
+      "from": 0,
+      "to": 1900,
+      "x": 90,
+      "y": 80,
+      "size": 24,
+      "color": "white",
+      "at": "w5",
+      "dur": 1.2
+     },
+     {
+      "type": "text",
+      "text": "HOMMES",
+      "x": 90,
+      "y": 104,
+      "size": 8,
+      "color": "soft",
+      "at": "w8",
+      "in": "fade"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Environ 1400 ne reviendront jamais.",
+   "shot": {
+    "keep": true,
+    "els": [
+     {
+      "type": "rect",
+      "x": 75,
+      "y": 213,
+      "w": 132,
+      "h": 34,
+      "fill": [
+       19,
+       15,
+       10,
+       200
+      ],
+      "at": "w1",
+      "in": "draw"
+     },
+     {
+      "type": "text",
+      "text": "-1400",
+      "x": 90,
+      "y": 150,
+      "size": 24,
+      "color": "red",
+      "at": "w1",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Et seulement quatre sont tués par l'ennemi.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "4",
+      "x": 90,
+      "y": 140,
+      "size": 24,
+      "font": "bold",
+      "color": "accent",
+      "s": 3,
+      "at": "w2",
+      "in": "pop"
+     },
+     {
+      "type": "text",
+      "text": "PAR L'ENNEMI",
+      "x": 90,
+      "y": 200,
+      "size": 8,
+      "color": "soft",
+      "at": "w5",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "1747. Sur le navire Salisbury, un jeune chirurgien écossais en a assez.",
+   "shot": {
+    "chip": "1747",
+    "bg": "stars",
+    "els": [
+     {
+      "type": "obj",
+      "name": "moon",
+      "x": 145,
+      "y": 60,
+      "size": 1.0
+     },
+     {
+      "type": "obj",
+      "name": "wave",
+      "x": 90,
+      "y": 220,
+      "w": 190
+     },
+     {
+      "type": "obj",
+      "name": "ship",
+      "x": 90,
+      "y": 205,
+      "size": 1.7,
+      "loop": "bob",
+      "in": "slide_l"
+     },
+     {
+      "type": "text",
+      "text": "HMS SALISBURY",
+      "x": 90,
+      "y": 255,
+      "size": 8,
+      "color": "soft",
+      "at": "w4",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "James Lind.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "card",
+      "x": 90,
+      "y": 155,
+      "size": 2.0,
+      "lines_text": [
+       "JAMES LIND",
+       "CHIRURGIEN",
+       "ÉCOSSE",
+       "30 ANS"
+      ],
+      "hair": "hair2",
+      "top": "accent_d"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il prend 12 marins malades et les sépare en 6 paires.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "12",
+      "x": 90,
+      "y": 60,
+      "size": 24,
+      "color": "accent",
+      "at": "w2",
+      "in": "pop"
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p0",
+      "x": 25,
+      "y": 170,
+      "px": 1,
+      "at": 0.3
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p1",
+      "x": 51,
+      "y": 170,
+      "px": 1,
+      "at": 0.45
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p2",
+      "x": 77,
+      "y": 170,
+      "px": 1,
+      "at": 0.6
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p3",
+      "x": 103,
+      "y": 170,
+      "px": 1,
+      "at": 0.75
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p4",
+      "x": 129,
+      "y": 170,
+      "px": 1,
+      "at": 0.9
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p5",
+      "x": 155,
+      "y": 170,
+      "px": 1,
+      "at": 1.05
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p6",
+      "x": 25,
+      "y": 240,
+      "px": 1,
+      "at": 1.2
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p7",
+      "x": 51,
+      "y": 240,
+      "px": 1,
+      "at": 1.35
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p8",
+      "x": 77,
+      "y": 240,
+      "px": 1,
+      "at": 1.5
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p9",
+      "x": 103,
+      "y": 240,
+      "px": 1,
+      "at": 1.65
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p10",
+      "x": 129,
+      "y": 240,
+      "px": 1,
+      "at": 1.8
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "id": "p11",
+      "x": 155,
+      "y": 240,
+      "px": 1,
+      "at": 1.95
+     }
+    ]
+   }
+  },
+  {
+   "text": "Chaque paire reçoit un remède différent.",
+   "shot": {
+    "keep": true,
+    "update": {
+     "p0": {
+      "move": [
+       {
+        "to": [
+         33,
+         170
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p1": {
+      "move": [
+       {
+        "to": [
+         47,
+         170
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p2": {
+      "move": [
+       {
+        "to": [
+         83,
+         170
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p3": {
+      "move": [
+       {
+        "to": [
+         97,
+         170
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p4": {
+      "move": [
+       {
+        "to": [
+         133,
+         170
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p5": {
+      "move": [
+       {
+        "to": [
+         147,
+         170
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p6": {
+      "move": [
+       {
+        "to": [
+         33,
+         250
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p7": {
+      "move": [
+       {
+        "to": [
+         47,
+         250
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p8": {
+      "move": [
+       {
+        "to": [
+         83,
+         250
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p9": {
+      "move": [
+       {
+        "to": [
+         97,
+         250
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p10": {
+      "move": [
+       {
+        "to": [
+         133,
+         250
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     },
+     "p11": {
+      "move": [
+       {
+        "to": [
+         147,
+         250
+        ],
+        "at": 0.1,
+        "dur": 0.6
+       }
+      ]
+     }
+    },
+    "els": [
+     {
+      "type": "rect",
+      "x": 40,
+      "y": 154,
+      "w": 40,
+      "h": 42,
+      "fill": null,
+      "outline": "accent",
+      "at": 0.8,
+      "in": "fade"
+     },
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 154,
+      "w": 40,
+      "h": 42,
+      "fill": null,
+      "outline": "accent",
+      "at": 0.9,
+      "in": "fade"
+     },
+     {
+      "type": "rect",
+      "x": 140,
+      "y": 154,
+      "w": 40,
+      "h": 42,
+      "fill": null,
+      "outline": "accent",
+      "at": 1.0,
+      "in": "fade"
+     },
+     {
+      "type": "rect",
+      "x": 40,
+      "y": 234,
+      "w": 40,
+      "h": 42,
+      "fill": null,
+      "outline": "accent",
+      "at": 1.1,
+      "in": "fade"
+     },
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 234,
+      "w": 40,
+      "h": 42,
+      "fill": null,
+      "outline": "accent",
+      "at": 1.2,
+      "in": "fade"
+     },
+     {
+      "type": "rect",
+      "x": 140,
+      "y": 234,
+      "w": 40,
+      "h": 42,
+      "fill": null,
+      "outline": "accent",
+      "at": 1.3,
+      "in": "fade"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Du cidre. Du vinaigre. De l'eau de mer. De l'acide dilué. Une pâte d'ail et de moutarde.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "barrel",
+      "x": 52,
+      "y": 95,
+      "size": 1.7,
+      "at": "w1",
+      "color": "brown"
+     },
+     {
+      "type": "text",
+      "text": "CIDRE",
+      "x": 52,
+      "y": 129,
+      "size": 8,
+      "color": "pale",
+      "at": "w1",
+      "in": "fade"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 128,
+      "y": 95,
+      "size": 1.7,
+      "at": "w3",
+      "color": "red2"
+     },
+     {
+      "type": "text",
+      "text": "VINAIGRE",
+      "x": 128,
+      "y": 129,
+      "size": 8,
+      "color": "pale",
+      "at": "w3",
+      "in": "fade"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 52,
+      "y": 173,
+      "size": 1.7,
+      "at": "w7",
+      "color": "blue"
+     },
+     {
+      "type": "text",
+      "text": "EAU DE MER",
+      "x": 52,
+      "y": 207,
+      "size": 8,
+      "color": "pale",
+      "at": "w7",
+      "in": "fade"
+     },
+     {
+      "type": "obj",
+      "name": "tube",
+      "x": 128,
+      "y": 173,
+      "size": 1.7,
+      "at": "w9",
+      "color": "yellow"
+     },
+     {
+      "type": "text",
+      "text": "ACIDE",
+      "x": 128,
+      "y": 207,
+      "size": 8,
+      "color": "pale",
+      "at": "w9",
+      "in": "fade"
+     },
+     {
+      "type": "obj",
+      "name": "dish",
+      "x": 52,
+      "y": 251,
+      "size": 1.7,
+      "at": "w13",
+      "food": "paper2"
+     },
+     {
+      "type": "text",
+      "text": "AIL",
+      "x": 52,
+      "y": 285,
+      "size": 8,
+      "color": "pale",
+      "at": "w13",
+      "in": "fade"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Et pour les deux derniers, deux oranges et un citron par jour.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "id": "g1",
+      "x": 90,
+      "y": 160,
+      "r": 50
+     },
+     {
+      "type": "obj",
+      "name": "orange",
+      "id": "o1",
+      "x": 42,
+      "y": 160,
+      "size": 2.6,
+      "at": "w5"
+     },
+     {
+      "type": "obj",
+      "name": "orange",
+      "id": "o2",
+      "x": 88,
+      "y": 160,
+      "size": 2.6,
+      "at": "w6"
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "id": "l1",
+      "x": 138,
+      "y": 160,
+      "size": 2.6,
+      "at": "w9"
+     },
+     {
+      "type": "text",
+      "text": "PAR JOUR",
+      "id": "pj",
+      "x": 90,
+      "y": 215,
+      "size": 16,
+      "color": "accent",
+      "at": "w10",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Retenez bien ce détail. Les fruits ne tiennent que six jours.",
+   "clue": "lemon",
+   "shot": {
+    "keep": true,
+    "drop": [
+     "pj"
+    ],
+    "els": [
+     {
+      "type": "obj",
+      "name": "calendar",
+      "x": 90,
+      "y": 82,
+      "size": 1.4,
+      "text": "6 J",
+      "at": "w8"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Six jours plus tard, l'un des mangeurs d'oranges est déjà sur pied.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "x": 90,
+      "y": 262,
+      "px": 4,
+      "pose": "arms_up",
+      "face": "happy"
+     },
+     {
+      "type": "obj",
+      "name": "check",
+      "x": 140,
+      "y": 120,
+      "size": 1.2,
+      "at": "w9",
+      "in": "stamp"
+     },
+     {
+      "type": "text",
+      "text": "JOUR 6",
+      "x": 90,
+      "y": 60,
+      "size": 16,
+      "color": "accent",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "L'autre va assez bien pour soigner ses camarades.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "bed",
+      "x": 112,
+      "y": 232,
+      "size": 1.7
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "closed",
+      "skin": "skin2",
+      "x": 122,
+      "y": 224,
+      "px": 1
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "x": 38,
+      "y": 258,
+      "px": 3,
+      "pose": "hold",
+      "face": "happy",
+      "at": "w1",
+      "in": "slide_l"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 86,
+      "y": 208,
+      "size": 1.0,
+      "color": "blue",
+      "at": "w5"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Les dix autres? Presque aucun progrès.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 20.0,
+      "y": 210,
+      "px": 1,
+      "at": 0.0
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 35.5,
+      "y": 210,
+      "px": 1,
+      "at": 0.06
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 51.0,
+      "y": 210,
+      "px": 1,
+      "at": 0.12
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 66.5,
+      "y": 210,
+      "px": 1,
+      "at": 0.18
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 82.0,
+      "y": 210,
+      "px": 1,
+      "at": 0.24
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 97.5,
+      "y": 210,
+      "px": 1,
+      "at": 0.3
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 113.0,
+      "y": 210,
+      "px": 1,
+      "at": 0.36
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 128.5,
+      "y": 210,
+      "px": 1,
+      "at": 0.42
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 144.0,
+      "y": 210,
+      "px": 1,
+      "at": 0.48
+     },
+     {
+      "type": "person",
+      "top": "blue2",
+      "pants": "paper2",
+      "hat": "cap",
+      "hat_color": "paper",
+      "face": "sad",
+      "skin": "skin2",
+      "x": 159.5,
+      "y": 210,
+      "px": 1,
+      "at": 0.54
+     },
+     {
+      "type": "text",
+      "text": "AUCUN PROGRÈS",
+      "x": 90,
+      "y": 110,
+      "size": 16,
+      "color": "soft",
+      "at": "w3",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Lind vient de réaliser l'un des premiers essais cliniques de l'histoire.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 90,
+      "y": 165,
+      "size": 2.0,
+      "title": "ESSAI",
+      "lines": 6,
+      "check": true,
+      "sign": true,
+      "in": "rise"
+     },
+     {
+      "type": "obj",
+      "name": "check",
+      "x": 128,
+      "y": 215,
+      "size": 1.6,
+      "at": "w7",
+      "in": "stamp"
+     },
+     {
+      "type": "text",
+      "text": "1747",
+      "x": 90,
+      "y": 60,
+      "size": 16,
+      "color": "accent",
+      "at": "w6",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Mais attendez. La Navy va mettre 48 ans à rendre le citron obligatoire.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "calendar",
+      "x": 90,
+      "y": 150,
+      "size": 2.2,
+      "text": "",
+      "color": "red"
+     },
+     {
+      "type": "counter",
+      "from": 1747,
+      "to": 1795,
+      "x": 90,
+      "y": 160,
+      "size": 24,
+      "color": "black",
+      "at": "w4",
+      "dur": 1.6,
+      "shadow": false,
+      "sep": ""
+     },
+     {
+      "type": "text",
+      "text": "48 ANS",
+      "x": 90,
+      "y": 230,
+      "size": 24,
+      "color": "red",
+      "at": "w7",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Et le pire, c'est Lind lui-même.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "LE PIRE",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "red",
+      "at": "w1",
+      "in": "pop"
+     },
+     {
+      "type": "person",
+      "top": "accent_d",
+      "outfit": "coat",
+      "hair": "hair2",
+      "hair_style": "short",
+      "tie": "white",
+      "x": 90,
+      "y": 262,
+      "px": 4,
+      "at": "w4",
+      "in": "rise"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Vous vous souvenez des fruits qui ne tiennent pas? Pour garder le jus, il le fait bouillir pendant des heures.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 90,
+      "y": 110,
+      "size": 1.5,
+      "out": {
+       "at": "w9",
+       "preset": "fall",
+       "dur": 0.5
+      }
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "..##########..",
+       ".#++++++++++#.",
+       "##############",
+       ".############.",
+       ".############.",
+       "..##########..",
+       "...########...",
+       "...o......o..."
+      ],
+      "colors": {
+       "#": "grey2",
+       "+": "orange",
+       "o": "black"
+      },
+      "px": 6,
+      "x": 90,
+      "y": 200,
+      "at": "w9",
+      "in": "rise"
+     },
+     {
+      "type": "particles",
+      "kind": "sparks",
+      "x": 90,
+      "y": 228,
+      "w": 60,
+      "h": 16,
+      "color": "orange",
+      "at": "w9"
+     },
+     {
+      "type": "particles",
+      "kind": "smoke",
+      "x": 90,
+      "y": 175,
+      "w": 40,
+      "h": 60,
+      "color": "grey",
+      "at": "w16"
+     },
+     {
+      "type": "obj",
+      "name": "clock",
+      "x": 150,
+      "y": 90,
+      "size": 0.9,
+      "speed": 8,
+      "at": "w17"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Sauf que la chaleur détruit justement ce qui guérit.",
+   "shot": {
+    "keep": true,
+    "els": [
+     {
+      "type": "text",
+      "text": "VITAMINE",
+      "x": 90,
+      "y": 70,
+      "size": 16,
+      "color": "accent",
+      "at": "w3",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "cross",
+      "x": 90,
+      "y": 70,
+      "size": 2.2,
+      "at": "w4",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Ce remède invisible, on ne l'identifie qu'en 1932. La vitamine C.",
+   "shot": {
+    "chip": "1932",
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 160,
+      "r": 55
+     },
+     {
+      "type": "obj",
+      "name": "tube",
+      "x": 90,
+      "y": 165,
+      "size": 3.2,
+      "color": "yellow",
+      "in": "rise"
+     },
+     {
+      "type": "text",
+      "text": "VITAMINE C",
+      "x": 90,
+      "y": 80,
+      "size": 24,
+      "color": "accent",
+      "at": "w8",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Le plus fou? Au 19e siècle, la Navy remplace les citrons par des citrons verts, moins chers.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "LE PLUS FOU",
+      "x": 90,
+      "y": 60,
+      "size": 16,
+      "color": "accent",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 42,
+      "y": 160,
+      "size": 2.6,
+      "at": "w10"
+     },
+     {
+      "type": "obj",
+      "name": "arrow",
+      "x": 90,
+      "y": 160,
+      "l": 26,
+      "color": "soft",
+      "at": "w11"
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 138,
+      "y": 160,
+      "size": 2.6,
+      "color": "green",
+      "at": "w13"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 138,
+      "y": 210,
+      "size": 1.4,
+      "spin": true,
+      "at": "w15"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Ils contiennent beaucoup moins de vitamine C.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 55,
+      "y": 232,
+      "size": 1.2
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 125,
+      "y": 232,
+      "size": 1.2,
+      "color": "green"
+     },
+     {
+      "type": "rect",
+      "x": 55,
+      "y": 170,
+      "w": 26,
+      "h": 90,
+      "fill": "yellow",
+      "anchor": "bottom",
+      "in": "grow_up",
+      "in_dur": 0.7
+     },
+     {
+      "type": "rect",
+      "x": 125,
+      "y": 202,
+      "w": 26,
+      "h": 26,
+      "fill": "green",
+      "anchor": "bottom",
+      "at": "w2",
+      "in": "grow_up",
+      "in_dur": 0.7
+     },
+     {
+      "type": "text",
+      "text": "VITAMINE C",
+      "x": 90,
+      "y": 80,
+      "size": 8,
+      "color": "soft",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "En 1876, une expédition polaire anglaise rentre ravagée par le scorbut.",
+   "shot": {
+    "chip": "1876",
+    "els": [
+     {
+      "type": "obj",
+      "name": "mountain",
+      "x": 90,
+      "y": 170,
+      "w": 180,
+      "h": 90,
+      "color": "steel"
+     },
+     {
+      "type": "obj",
+      "name": "wave",
+      "x": 90,
+      "y": 220,
+      "w": 190,
+      "color": "blue2"
+     },
+     {
+      "type": "obj",
+      "name": "ship",
+      "x": 60,
+      "y": 210,
+      "size": 0.8,
+      "loop": "bob"
+     },
+     {
+      "type": "particles",
+      "kind": "snow",
+      "x": 90,
+      "y": 160,
+      "w": 180,
+      "h": 320,
+      "n": 40,
+      "color": "white"
+     },
+     {
+      "type": "text",
+      "text": "SCORBUT",
+      "x": 90,
+      "y": 270,
+      "size": 16,
+      "color": "red",
+      "at": "w9",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il en restera un surnom pour les marins anglais. Les limeys.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "crowd",
+      "x": 90,
+      "y": 240,
+      "n": 5,
+      "w": 170,
+      "size": 1.5,
+      "tops": [
+       "blue2"
+      ],
+      "cheer": true
+     },
+     {
+      "type": "text",
+      "text": "« LIMEYS »",
+      "x": 90,
+      "y": 110,
+      "size": 24,
+      "color": "green",
+      "at": "w9",
+      "in": "stamp"
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 90,
+      "y": 168,
+      "size": 2.2,
+      "color": "green",
+      "at": "w9",
+      "loop": "float"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Je trouve ça génial. Douze marins et quelques fruits ont suffi à battre la pire maladie des mers.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 170,
+      "r": 60
+     },
+     {
+      "type": "person",
+      "top": "accent_d",
+      "outfit": "coat",
+      "hair": "hair2",
+      "hair_style": "short",
+      "tie": "white",
+      "x": 90,
+      "y": 262,
+      "px": 4,
+      "face": "happy"
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 40,
+      "y": 140,
+      "size": 1.2,
+      "at": "w8",
+      "loop": "float"
+     },
+     {
+      "type": "obj",
+      "name": "orange",
+      "x": 140,
+      "y": 140,
+      "size": 1.2,
+      "at": "w8",
+      "loop": "float"
+     },
+     {
+      "type": "text",
+      "text": "12 MARINS",
+      "x": 90,
+      "y": 70,
+      "size": 16,
+      "color": "accent",
+      "at": "w4",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Alors la prochaine fois que vous pressez un citron, rappelez-vous que…",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 160,
+      "r": 55
+     },
+     {
+      "type": "obj",
+      "name": "lemon",
+      "x": 90,
+      "y": 160,
+      "size": 4.2,
+      "loop": "pulse",
+      "at": "w8"
+     },
+     {
+      "type": "particles",
+      "kind": "sparks",
+      "x": 90,
+      "y": 160,
+      "w": 80,
+      "h": 60,
+      "color": "yellow",
+      "at": "w8"
+     }
+    ]
+   }
+  }
+ ],
+ "post": {
+  "caption": "Le scorbut a tué plus de marins que toutes les batailles navales. Et la solution tenait dans un citron. Tu savais que le surnom « limey » venait de là ?",
+  "youtube_title": "Ce citron a sauvé plus de marins que les canons",
+  "linkedin_text": "1747 : James Lind teste 6 remèdes contre le scorbut sur 12 marins. Les agrumes gagnent en 6 jours.\nLa Royal Navy mettra pourtant 48 ans à les rendre obligatoires.\nAvoir la preuve ne suffit pas : encore faut-il la faire adopter.",
+  "hashtags": [
+   "#nutrition",
+   "#vitaminec",
+   "#histoirevraie",
+   "#scorbut",
+   "#sante",
+   "#citron",
+   "#science"
+  ]
+ },
+ "sources": [
+  "James Lind, A Treatise of the Scurvy (1753)",
+  "Stephen Bown, Scurvy (2003)"
+ ]
+}

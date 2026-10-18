@@ -1,0 +1,1281 @@
+{
+ "format": "anim",
+ "brand": "pile-ou-face",
+ "domain": "business",
+ "id": "lustig-tour-eiffel",
+ "title": "Victor Lustig vend la tour Eiffel (1925)",
+ "beats": [
+  {
+   "text": "Cet homme a vendu la tour Eiffel.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 110,
+      "y": 160,
+      "r": 60
+     },
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 118,
+      "y": 150,
+      "size": 1.7
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 45,
+      "y": 270,
+      "px": 4,
+      "pose": "point",
+      "at": "w1",
+      "in": "slide_l"
+     },
+     {
+      "type": "text",
+      "text": "VENDUE",
+      "x": 118,
+      "y": 60,
+      "size": 24,
+      "color": "red",
+      "at": "w3",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Et l'acheteur n'a jamais porté plainte.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "brown",
+      "outfit": "suit",
+      "tie": "accent",
+      "hat": "top",
+      "hat_color": "grey2",
+      "glasses": true,
+      "hair": "grey",
+      "skin": "skin2",
+      "x": 90,
+      "y": 268,
+      "px": 4,
+      "face": "sad"
+     },
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 150,
+      "y": 150,
+      "size": 1.0,
+      "title": "PLAINTE",
+      "lines": 4,
+      "at": "w1",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "cross",
+      "x": 150,
+      "y": 150,
+      "size": 2.0,
+      "at": "w4",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Vous pensez sûrement à une blague. Sauf qu'à Paris, en 1925, c'est arrivé pour de vrai.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "UNE BLAGUE ?",
+      "x": 90,
+      "y": 70,
+      "size": 16,
+      "color": "soft",
+      "at": "w3",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 90,
+      "y": 180,
+      "size": 1.4,
+      "at": "w6",
+      "in": "rise"
+     },
+     {
+      "type": "text",
+      "text": "1925",
+      "x": 90,
+      "y": 275,
+      "size": 24,
+      "color": "accent",
+      "at": "w10",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Victor Lustig est un escroc international.",
+   "shot": {
+    "chip": "1925",
+    "els": [
+     {
+      "type": "obj",
+      "name": "card",
+      "x": 90,
+      "y": 110,
+      "size": 1.6,
+      "lines_text": [
+       "VICTOR LUSTIG",
+       "ESCROC"
+      ],
+      "top": "black",
+      "hair": "hair",
+      "in": "pop"
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 90,
+      "y": 280,
+      "px": 3,
+      "face": "happy",
+      "at": "w3",
+      "in": "rise"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Un jour, il lit un article dans le journal.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 90,
+      "y": 160,
+      "size": 2.2,
+      "title": "LE JOURNAL",
+      "lines": 8,
+      "color": "paper",
+      "in": "zoom"
+     },
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 72,
+      "y": 168,
+      "size": 0.35,
+      "color": "ink",
+      "at": "w5"
+     }
+    ]
+   }
+  },
+  {
+   "text": "La tour Eiffel coûte une fortune à entretenir.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 70,
+      "y": 165,
+      "size": 1.5
+     },
+     {
+      "type": "obj",
+      "name": "bag",
+      "x": 145,
+      "y": 150,
+      "size": 1.4,
+      "color": "brown",
+      "at": "w3",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 145,
+      "y": 205,
+      "size": 1.2,
+      "spin": true,
+      "at": "w5",
+      "in": "fall"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 128,
+      "y": 210,
+      "size": 1.0,
+      "spin": true,
+      "at": "w6",
+      "in": "fall"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Certains se demandent même s'il ne faudrait pas la démonter.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 90,
+      "y": 165,
+      "size": 1.6,
+      "loop": "shake",
+      "loop_amp": 0.6
+     },
+     {
+      "type": "text",
+      "text": "DÉMONTER ?",
+      "x": 90,
+      "y": 60,
+      "size": 16,
+      "color": "red",
+      "at": "w8",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Lustig a une idée folle.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 180,
+      "r": 55
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "pose": "think",
+      "face": "happy"
+     },
+     {
+      "type": "sprite",
+      "icon": "bolt",
+      "color": "yellow",
+      "px": 4,
+      "x": 130,
+      "y": 110,
+      "at": "w3",
+      "in": "pop",
+      "loop": "pulse"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il se fait fabriquer du papier officiel du ministère.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 90,
+      "y": 165,
+      "size": 2.0,
+      "title": "MINISTÈRE",
+      "lines": 6,
+      "sign": true,
+      "in": "slide_u"
+     },
+     {
+      "type": "ellipse",
+      "x": 118,
+      "y": 205,
+      "w": 22,
+      "h": 22,
+      "fill": null,
+      "outline": "red",
+      "width": 2,
+      "at": "w6",
+      "in": "stamp"
+     },
+     {
+      "type": "text",
+      "text": "RF",
+      "x": 118,
+      "y": 205,
+      "size": 8,
+      "color": "red",
+      "at": "w6",
+      "shadow": false,
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Puis il invite six ferrailleurs dans un grand hôtel, le Crillon.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "building",
+      "x": 90,
+      "y": 165,
+      "w": 140,
+      "h": 120,
+      "color": "dim",
+      "windows": "accent_d",
+      "sign": "HÔTEL DE CRILLON",
+      "in": "rise"
+     },
+     {
+      "type": "obj",
+      "name": "crowd",
+      "x": 90,
+      "y": 268,
+      "n": 6,
+      "w": 170,
+      "size": 1.4,
+      "tops": [
+       "grey2",
+       "brown2"
+      ],
+      "at": "w3",
+      "in": "slide_u"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il se présente comme un haut fonctionnaire et leur parle en secret.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "table",
+      "x": 90,
+      "y": 240,
+      "w": 100,
+      "size": 1.4
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 90,
+      "y": 232,
+      "px": 3,
+      "pose": "point",
+      "in": "fade"
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "outfit": "coat",
+      "hat": "fedora",
+      "hat_color": "brown2",
+      "x": 30,
+      "y": 262,
+      "px": 2,
+      "facing": "right",
+      "at": "w4"
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "outfit": "coat",
+      "hat": "fedora",
+      "hat_color": "brown2",
+      "x": 150,
+      "y": 262,
+      "px": 2,
+      "facing": "left",
+      "at": "w4"
+     },
+     {
+      "type": "text",
+      "text": "CHUT",
+      "x": 90,
+      "y": 70,
+      "size": 16,
+      "color": "accent",
+      "at": "w10",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "La tour va être vendue à la ferraille. Plus de 7000 tonnes de métal.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 90,
+      "y": 150,
+      "size": 1.5,
+      "out": {
+       "at": "w7",
+       "preset": "fall",
+       "dur": 0.6
+      }
+     },
+     {
+      "type": "particles",
+      "kind": "dust",
+      "x": 90,
+      "y": 240,
+      "w": 160,
+      "h": 40,
+      "color": "accent",
+      "at": "w7"
+     },
+     {
+      "type": "counter",
+      "from": 0,
+      "to": 7000,
+      "suffix": " T",
+      "x": 90,
+      "y": 230,
+      "size": 24,
+      "color": "accent",
+      "at": "w8",
+      "dur": 1.2
+     }
+    ]
+   }
+  },
+  {
+   "text": "Retenez bien ce détail. Il exige une discrétion absolue.",
+   "clue": "lock",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 160,
+      "r": 50
+     },
+     {
+      "type": "sprite",
+      "icon": "lock",
+      "color": "accent",
+      "px": 7,
+      "x": 90,
+      "y": 165,
+      "in": "stamp"
+     },
+     {
+      "type": "text",
+      "text": "SECRET",
+      "x": 90,
+      "y": 240,
+      "size": 16,
+      "color": "accent",
+      "at": "w6",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Un ferrailleur mord à l'hameçon. André Poisson.",
+   "shot": {
+    "els": [
+     {
+      "type": "sprite",
+      "art": [
+       "...##...",
+       "..#..#..",
+       "......#.",
+       ".....#..",
+       "....#...",
+       "#...#...",
+       "#..#....",
+       ".##....."
+      ],
+      "colors": {
+       "#": "steel"
+      },
+      "px": 4,
+      "x": 90,
+      "y": 90,
+      "at": 0,
+      "in": "slide_d"
+     },
+     {
+      "type": "line",
+      "pts": [
+       [
+        0,
+        -90
+       ],
+       [
+        0,
+        0
+       ]
+      ],
+      "x": 86,
+      "y": 76,
+      "color": "grey",
+      "at": 0
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "....####...#",
+       "..########.#",
+       ".#o########.",
+       "############",
+       ".##########.",
+       "..########.#",
+       "....####...#"
+      ],
+      "colors": {
+       "#": "accent",
+       "o": "black"
+      },
+      "px": 4,
+      "x": 90,
+      "y": 170,
+      "at": "w3",
+      "in": "rise",
+      "loop": "sway"
+     },
+     {
+      "type": "text",
+      "text": "POISSON",
+      "x": 90,
+      "y": 250,
+      "size": 24,
+      "color": "accent",
+      "at": "w6",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il porte bien son nom.",
+   "shot": {
+    "keep": true,
+    "els": [
+     {
+      "type": "text",
+      "text": "HÉ HÉ",
+      "x": 148,
+      "y": 120,
+      "size": 16,
+      "color": "accent",
+      "at": "w2",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il rêve d'entrer dans la haute société parisienne.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "brown",
+      "outfit": "suit",
+      "tie": "accent",
+      "hat": "top",
+      "hat_color": "grey2",
+      "glasses": true,
+      "hair": "grey",
+      "skin": "skin2",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "face": "happy",
+      "pose": "arms_up"
+     },
+     {
+      "type": "particles",
+      "kind": "confetti",
+      "x": 90,
+      "y": 120,
+      "w": 170,
+      "h": 200,
+      "n": 30,
+      "at": "w5"
+     },
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 150,
+      "y": 120,
+      "size": 0.6,
+      "at": "w6",
+      "in": "fade"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Mais sa femme se méfie. Tout va trop vite.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "red2",
+      "outfit": "dress",
+      "hair_style": "bun",
+      "hair": "hair2",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "face": "neutral",
+      "pose": "think",
+      "in": "slide_r"
+     },
+     {
+      "type": "obj",
+      "name": "clock",
+      "x": 140,
+      "y": 110,
+      "size": 1.2,
+      "speed": 30,
+      "at": "w5"
+     },
+     {
+      "type": "text",
+      "text": "TROP VITE",
+      "x": 70,
+      "y": 80,
+      "size": 16,
+      "color": "red",
+      "at": "w6",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Alors Lustig joue son meilleur coup.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "face": "happy",
+      "in": "zoom"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 135,
+      "y": 150,
+      "size": 1.8,
+      "spin": true,
+      "at": "w3",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il avoue, l'air gêné, qu'il est mal payé. Et qu'un petit pot-de-vin l'aiderait.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 55,
+      "y": 272,
+      "px": 3,
+      "face": "sad",
+      "pose": "hold"
+     },
+     {
+      "type": "person",
+      "top": "brown",
+      "outfit": "suit",
+      "tie": "accent",
+      "hat": "top",
+      "hat_color": "grey2",
+      "glasses": true,
+      "hair": "grey",
+      "skin": "skin2",
+      "x": 135,
+      "y": 272,
+      "px": 3,
+      "facing": "left",
+      "face": "surprised"
+     },
+     {
+      "type": "obj",
+      "name": "envelope",
+      "x": 95,
+      "y": 200,
+      "size": 1.2,
+      "at": "w9",
+      "in": "pop",
+      "seal": true,
+      "move": [
+       {
+        "to": [
+         112,
+         200
+        ],
+        "at": "w11",
+        "dur": 0.5
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "text": "POT-DE-VIN",
+      "x": 90,
+      "y": 80,
+      "size": 16,
+      "color": "accent",
+      "at": "w9",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Pour Poisson, c'est la preuve. Seul un vrai fonctionnaire réclamerait un pot-de-vin.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "brown",
+      "outfit": "suit",
+      "tie": "accent",
+      "hat": "top",
+      "hat_color": "grey2",
+      "glasses": true,
+      "hair": "grey",
+      "skin": "skin2",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "face": "happy"
+     },
+     {
+      "type": "obj",
+      "name": "check",
+      "x": 145,
+      "y": 120,
+      "size": 1.8,
+      "at": "w4",
+      "in": "stamp"
+     },
+     {
+      "type": "text",
+      "text": "C'EST UN VRAI !",
+      "x": 80,
+      "y": 70,
+      "size": 16,
+      "color": "accent",
+      "at": "w6",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il paie la tour. Et le pot-de-vin.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "bills",
+      "x": 60,
+      "y": 180,
+      "size": 1.8,
+      "n": 5,
+      "at": "w1",
+      "in": "fall"
+     },
+     {
+      "type": "obj",
+      "name": "bills",
+      "x": 125,
+      "y": 200,
+      "size": 1.4,
+      "n": 3,
+      "at": "w5",
+      "in": "fall"
+     },
+     {
+      "type": "text",
+      "text": "+",
+      "x": 92,
+      "y": 185,
+      "size": 24,
+      "color": "soft",
+      "at": "w4",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Le soir même, Lustig file à Vienne avec une valise de billets.",
+   "shot": {
+    "chip": "VIENNE",
+    "bg": "stars",
+    "els": [
+     {
+      "type": "obj",
+      "name": "moon",
+      "x": 145,
+      "y": 60,
+      "size": 1.0
+     },
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 255,
+      "w": 180,
+      "h": 4,
+      "fill": "grey2"
+     },
+     {
+      "type": "obj",
+      "name": "train",
+      "x": -40,
+      "y": 240,
+      "size": 1.5,
+      "color": "accent_d",
+      "move": [
+       {
+        "to": [
+         230,
+         240
+        ],
+        "at": "w2",
+        "dur": 3.0,
+        "ease": "in"
+       }
+      ]
+     },
+     {
+      "type": "particles",
+      "kind": "smoke",
+      "x": 60,
+      "y": 205,
+      "w": 40,
+      "h": 50,
+      "color": "grey",
+      "at": "w2"
+     },
+     {
+      "type": "text",
+      "text": "VIENNE",
+      "x": 90,
+      "y": 110,
+      "size": 24,
+      "color": "accent",
+      "at": "w5",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Vous vous souvenez de la discrétion? Poisson a bien trop honte pour aller voir la police.",
+   "shot": {
+    "els": [
+     {
+      "type": "sprite",
+      "icon": "lock",
+      "color": "accent",
+      "px": 3,
+      "x": 150,
+      "y": 70,
+      "in": "pop"
+     },
+     {
+      "type": "person",
+      "top": "brown",
+      "outfit": "suit",
+      "tie": "accent",
+      "hat": "top",
+      "hat_color": "grey2",
+      "glasses": true,
+      "hair": "grey",
+      "skin": "skin2",
+      "x": 80,
+      "y": 275,
+      "px": 4,
+      "face": "sad",
+      "loop": "shake",
+      "loop_amp": 0.4
+     },
+     {
+      "type": "obj",
+      "name": "building",
+      "x": 150,
+      "y": 210,
+      "w": 50,
+      "h": 60,
+      "size": 1,
+      "color": "blue2",
+      "windows": "paper",
+      "sign": "POLICE",
+      "at": "w11"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Le pire? Quelques semaines plus tard, Lustig revient à Paris.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "LE PIRE",
+      "id": "pire",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "red",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 130,
+      "y": 180,
+      "size": 1.1
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": -20,
+      "y": 280,
+      "px": 3,
+      "pose": "walk",
+      "move": [
+       {
+        "to": [
+         60,
+         280
+        ],
+        "at": "w5",
+        "dur": 1.5,
+        "ease": "linear"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "text": "Et il essaie de revendre la tour Eiffel.",
+   "shot": {
+    "keep": true,
+    "drop": [
+     "pire"
+    ],
+    "els": [
+     {
+      "type": "text",
+      "text": "BIS",
+      "x": 150,
+      "y": 80,
+      "size": 24,
+      "color": "accent",
+      "at": "w4",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Cette fois, l'acheteur prévient la police. Lustig s'échappe de justesse.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "blue2",
+      "outfit": "uniform",
+      "hat": "cap",
+      "hat_color": "blue2",
+      "x": 140,
+      "y": 275,
+      "px": 3,
+      "pose": "point",
+      "facing": "left",
+      "at": "w5",
+      "in": "slide_r"
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "tie": "red",
+      "hat": "fedora",
+      "hat_color": "black",
+      "beard": "mustache",
+      "hair": "hair",
+      "x": 60,
+      "y": 275,
+      "px": 3,
+      "pose": "walk",
+      "facing": "left",
+      "move": [
+       {
+        "to": [
+         -40,
+         275
+        ],
+        "at": "w8",
+        "dur": 0.9,
+        "ease": "in"
+       }
+      ]
+     },
+     {
+      "type": "particles",
+      "kind": "dust",
+      "x": 60,
+      "y": 270,
+      "w": 40,
+      "h": 10,
+      "color": "grey",
+      "at": "w8"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il finira à Alcatraz, des années plus tard, pour fausse monnaie.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "wave",
+      "x": 90,
+      "y": 235,
+      "w": 190,
+      "color": "blue2"
+     },
+     {
+      "type": "obj",
+      "name": "mountain",
+      "x": 90,
+      "y": 210,
+      "w": 110,
+      "h": 40,
+      "color": "grey2"
+     },
+     {
+      "type": "obj",
+      "name": "building",
+      "x": 90,
+      "y": 175,
+      "w": 60,
+      "h": 40,
+      "size": 1,
+      "color": "grey",
+      "windows": "ink"
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "#..#..#..#..#..#",
+       "#..#..#..#..#..#",
+       "################",
+       "#..#..#..#..#..#",
+       "#..#..#..#..#..#",
+       "#..#..#..#..#..#",
+       "#..#..#..#..#..#",
+       "################",
+       "#..#..#..#..#..#"
+      ],
+      "colors": {
+       "#": "grey"
+      },
+      "px": 6,
+      "x": 90,
+      "y": 160,
+      "at": "w2",
+      "in": "fall"
+     },
+     {
+      "type": "text",
+      "text": "ALCATRAZ",
+      "x": 90,
+      "y": 60,
+      "size": 16,
+      "color": "accent",
+      "at": "w3",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "J'adore ce détail. Ce qui a convaincu l'acheteur, ce n'est pas un faux document. C'est une fausse corruption.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 55,
+      "y": 160,
+      "size": 1.2,
+      "title": "FAUX",
+      "lines": 4,
+      "at": "w6"
+     },
+     {
+      "type": "obj",
+      "name": "cross",
+      "x": 55,
+      "y": 160,
+      "size": 1.6,
+      "at": "w15",
+      "in": "stamp"
+     },
+     {
+      "type": "obj",
+      "name": "envelope",
+      "x": 130,
+      "y": 160,
+      "size": 1.6,
+      "seal": true,
+      "at": "w17",
+      "in": "pop",
+      "loop": "pulse"
+     },
+     {
+      "type": "text",
+      "text": "J'ADORE",
+      "x": 90,
+      "y": 70,
+      "size": 16,
+      "color": "accent",
+      "at": "w1",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Alors la prochaine fois qu'on vous propose une affaire trop belle, rappelez-vous que…",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 160,
+      "r": 60
+     },
+     {
+      "type": "obj",
+      "name": "tower",
+      "x": 90,
+      "y": 160,
+      "size": 1.6,
+      "at": "w8",
+      "in": "rise"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 40,
+      "y": 110,
+      "size": 1.2,
+      "spin": true,
+      "at": "w9"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 145,
+      "y": 130,
+      "size": 1.0,
+      "spin": true,
+      "at": "w10"
+     }
+    ]
+   }
+  }
+ ],
+ "post": {
+  "caption": "1925 : un escroc vend la tour Eiffel à un ferrailleur… qui n'ose même pas porter plainte. Et quelques semaines plus tard, il essaie de la revendre. Tu serais tombé dans le panneau ?",
+  "youtube_title": "Il a vendu la tour Eiffel… et l'acheteur n'a jamais porté plainte",
+  "linkedin_text": "1925 : Victor Lustig vend la tour Eiffel à un ferrailleur parisien.\nCe qui a fait signer l'acheteur, ce n'est pas un faux document : c'est une demande de pot-de-vin, qui le rendait crédible.\nMéfiez-vous des affaires qui flattent votre ego plus que votre raison.",
+  "hashtags": [
+   "#business",
+   "#arnaque",
+   "#histoirevraie",
+   "#escroquerie",
+   "#toureiffel",
+   "#argent"
+  ]
+ },
+ "sources": [
+  "James F. Johnson & Floyd Miller, The Man Who Sold the Eiffel Tower (1961)",
+  "Smithsonian Magazine, « The Man Who Sold the Eiffel Tower. Twice » (2012)"
+ ]
+}

@@ -16,7 +16,7 @@ API = "https://api.upload-post.com/api"
 
 
 def build_fields(story: dict, platforms: list[str], user: str, schedule: str | None = None,
-                 timezone: str | None = None) -> list[tuple[str, str]]:
+                 timezone: str | None = None, queue: bool = False) -> list[tuple[str, str]]:
     post = story.get("post", {})
     tags = post.get("hashtags", [])
     caption = (post.get("caption", "") + "\n\n" + " ".join(tags)).strip()
@@ -40,6 +40,9 @@ def build_fields(story: dict, platforms: list[str], user: str, schedule: str | N
     if "linkedin" in platforms:
         fields += [("linkedin_title", li_text[:200]), ("linkedin_description", li_text[:3000]),
                    ("visibility", "PUBLIC")]
+    if queue and not schedule:
+        # prochain créneau libre du calendrier de publication du profil Upload-Post
+        fields.append(("add_to_queue", "true"))
     if schedule:
         if len(schedule) == 16:  # 2026-10-20T18:00 → 2026-10-20T18:00:00
             schedule += ":00"
@@ -50,14 +53,15 @@ def build_fields(story: dict, platforms: list[str], user: str, schedule: str | N
 
 
 def publish(video: Path, story: dict, api_key: str, user: str, platforms: list[str],
-            schedule: str | None = None, timezone: str | None = None, force: bool = False) -> dict:
+            schedule: str | None = None, timezone: str | None = None, force: bool = False,
+            queue: bool = False) -> dict:
     record = video.parent / "publish.json"
     if record.exists() and not force:
         prev = json.loads(record.read_text())
         raise SystemExit(f"Déjà publié ({prev.get('at')}). Utilise --force pour republier.")
     if not api_key:
         raise SystemExit("UPLOAD_POST_API_KEY manquante dans .env")
-    fields = build_fields(story, platforms, user, schedule, timezone)
+    fields = build_fields(story, platforms, user, schedule, timezone, queue)
     rid = f"{story.get('brand', 'x')}-{story.get('domain', 'x')}-{story.get('id', video.parent.name)}-{int(time.time())}"
     headers = {"Authorization": f"Apikey {api_key}", "Idempotency-Key": rid}
     fields += [("request_id", rid), ("external_id", story.get("id", video.parent.name))]

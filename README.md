@@ -13,7 +13,22 @@ Ce dépôt produit et publie automatiquement des vidéos verticales de 60 à 65 
 
 Chaque marque vit dans `brands/<marque>/` : `brand.json` (nom, @handle, logo pixel, voix, couleurs et sujet de chaque domaine, profil Upload-Post) et `topics-<domaine>.txt` (banque de sujets). Pour ajouter un domaine ou une marque, il suffit d'ajouter une entrée ou un dossier : toutes les nuances sont calculées à partir du fond et de l'accent (`pixelstory/theme.py`).
 
-## Pipeline
+## Le pipeline en 3 étapes
+
+1. **Trouver les sujets** : `--find-topics 10` demande à l'IA des histoires vraies, surprenantes, visuelles, avec retournement et indice, sans doublon avec la banque (`brands/<marque>/topics-<domaine>.txt`) ni avec ce qui est déjà fait (`*.done.txt`).
+2. **Générer les animations** : pour chaque sujet, l'IA écrit le script (formule maison : accroche, « vous pensez sûrement… sauf que », indice à retenir puis rappel, « mais attendez », avis personnel, fin en boucle), le fait vérifier, puis compose **un storyboard unique** plan par plan : personnages, objets, sprites dessinés pour l'occasion, mouvements calés sur les mots de la voix.
+3. **Générer la vidéo** : voix ElevenLabs, rendu pixel art 180×320 agrandi ×6 (1080×1920), bruitages synchronisés, carton de fin de la marque, puis publication Upload-Post (immédiate, programmée ou en file).
+
+```bash
+python make_video.py --brand nourlio --domain sante --find-topics 10   # 1. sujets
+python make_video.py --brand nourlio --domain sante --next 3 --publish --queue   # 2 + 3, en file de publication
+```
+
+Exemples complets, faits à la main avec le moteur (un univers différent par vidéo) :
+`stories/nourlio/nutrition/scorbut-lind.json`, `stories/nourlio/sante/phineas-gage.json`,
+`stories/nourlio/sport/hicks-1904-anim.json`, `stories/pile-ou-face/business/lustig-tour-eiffel.json`.
+
+## Pipeline technique
 
 | Étape | Outil |
 |---|---|
@@ -52,6 +67,7 @@ python make_video.py --story stories/pile-ou-face/business/<id>.json
 python make_video.py --story ... --publish                    # tout de suite, sur les plateformes de la marque
 python make_video.py --publish-only output/nourlio/sport/hicks-1904 --schedule 2026-10-20T18:00
 python make_video.py --publish-only output/... --dry-run      # affiche ce qui serait envoyé
+python make_video.py --publish-only output/... --queue        # prochain créneau libre du calendrier Upload-Post
 
 # Idées de sujets
 python make_video.py --brand nourlio --domain sport --ideas 15
@@ -61,7 +77,25 @@ Chaque vidéo est rangée dans `output/<marque>/<domaine>/<id>/` : `video.mp4`, 
 
 Options utiles : `--reuse-voice` (re-rendu sans repayer la voix), `--no-images`, `--music fichier.mp3`, `--number 12`, `--platforms instagram,youtube`, `--voice edge` (voix gratuite pour tester).
 
-## Format d'une histoire (`stories/*.json`)
+## Format animé (`"format": "anim"`, par défaut)
+
+Chaque beat (phrase dite) peut ouvrir un plan (`shot`) composé d'éléments :
+
+```json
+{"text": "Et pour les deux derniers, deux oranges et un citron par jour.",
+ "shot": {"els": [
+   {"type": "glow", "x": 90, "y": 160, "r": 50},
+   {"type": "obj", "name": "orange", "x": 42, "y": 160, "size": 2.6, "at": "w5"},
+   {"type": "obj", "name": "lemon", "x": 138, "y": 160, "size": 2.6, "at": "w9"},
+   {"type": "text", "text": "PAR JOUR", "x": 90, "y": 215, "size": 16, "at": "w10", "in": "pop"}]}}
+```
+
+- Toile 180×320 ; `"at": "w5"` = apparition au 6e mot de la phrase (synchro voix).
+- Éléments : `person` (personnage paramétrique : tenue, coiffure, chapeau, pose, expression), `obj` (une quarantaine d'objets : `pixelstory/anim/library.py`), `sprite` (dessin ASCII libre), `text`, `counter`, `rect`, `ellipse`, `line`, `poly`, `glow`, `particles`.
+- Animations : `in` (pop, fall, slide, draw, type, stamp…), `move` (déplacements), `loop` (float, pulse, shake…), `out`.
+- `"keep": true` prolonge la scène précédente ; `"clue": "lemon"` ajoute un indice dans la barre « INDICES ».
+
+## Ancien format à scènes types (`--format hud`)
 
 Chaque *beat* correspond à une phrase dite, associée à une scène animée. Exemple complet : `stories/nourlio/sport/hicks-1904.json`.
 
@@ -79,7 +113,9 @@ make_video.py          CLI
 pixelstory/brand.py    chargement des marques et domaines
 pixelstory/theme.py    palette dérivée de (fond, accent)
 pixelstory/publish.py  publication Upload-Post
-pixelstory/writer.py   prompts OpenRouter (formule narrative + fact-check, textes par plateforme)
+pixelstory/topics.py   étape 1 : recherche de sujets sans doublon
+pixelstory/anim/       moteur d'animation (engine, library, render) + scénariste storyboard (writer)
+pixelstory/writer.py   prompts OpenRouter du format hud (+ fact-check partagé)
 pixelstory/voice.py    ElevenLabs / OpenRouter TTS + alignement Whisper / Edge (secours)
 pixelstory/images.py   génération OpenRouter + style pixel aux couleurs du domaine
 pixelstory/scenes.py   catalogue de scènes animées

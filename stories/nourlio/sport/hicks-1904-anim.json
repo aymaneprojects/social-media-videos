@@ -1,0 +1,1557 @@
+{
+ "format": "anim",
+ "brand": "nourlio",
+ "domain": "sport",
+ "id": "hicks-1904-anim",
+ "title": "Thomas Hicks, le marathon dopé de 1904",
+ "beats": [
+  {
+   "text": "Ce coureur a gagné le marathon olympique dopé à la mort-aux-rats.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 180,
+      "r": 60
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 270,
+      "px": 4,
+      "pose": "walk"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 130,
+      "y": 150,
+      "size": 1.4,
+      "color": "yellow",
+      "at": "w4",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "skull",
+      "x": 50,
+      "y": 120,
+      "size": 1.4,
+      "at": "w9",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Vous pensez sûrement que le dopage est une invention moderne.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "tube",
+      "x": 60,
+      "y": 170,
+      "size": 2.6,
+      "color": "accent"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 120,
+      "y": 175,
+      "size": 2.0,
+      "color": "blue",
+      "label": "EPO",
+      "at": "w6",
+      "in": "pop"
+     },
+     {
+      "type": "text",
+      "text": "MODERNE ?",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "soft",
+      "at": "w8",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Sauf qu'en 1904, ses entraîneurs le font en pleine course, devant tout le monde.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "1904",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "accent",
+      "at": "w2",
+      "in": "stamp"
+     },
+     {
+      "type": "obj",
+      "name": "crowd",
+      "x": 90,
+      "y": 265,
+      "n": 6,
+      "w": 170,
+      "size": 1.4,
+      "cheer": true,
+      "at": "w10"
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "hat": "fedora",
+      "hat_color": "grey2",
+      "tie": "accent",
+      "x": 60,
+      "y": 225,
+      "px": 3,
+      "pose": "hold",
+      "at": "w4",
+      "in": "slide_l"
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 120,
+      "y": 225,
+      "px": 3,
+      "pose": "walk",
+      "facing": "left",
+      "at": "w4"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Saint-Louis, États-Unis, 30 août 1904.",
+   "shot": {
+    "chip": "1904",
+    "els": [
+     {
+      "type": "obj",
+      "name": "sun",
+      "x": 140,
+      "y": 70,
+      "size": 1.5
+     },
+     {
+      "type": "obj",
+      "name": "building",
+      "x": 50,
+      "y": 200,
+      "w": 50,
+      "h": 80,
+      "color": "dim",
+      "windows": "accent_d"
+     },
+     {
+      "type": "obj",
+      "name": "building",
+      "x": 130,
+      "y": 210,
+      "w": 60,
+      "h": 60,
+      "color": "mid",
+      "windows": "accent_d"
+     },
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 275,
+      "w": 180,
+      "h": 70,
+      "fill": "brown2"
+     },
+     {
+      "type": "text",
+      "text": "SAINT-LOUIS",
+      "x": 90,
+      "y": 290,
+      "size": 8,
+      "color": "pale",
+      "at": "w1",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il fait plus de 30 degrés. Les routes sont en terre.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "sun",
+      "x": 90,
+      "y": 90,
+      "size": 2.4,
+      "loop": "pulse"
+     },
+     {
+      "type": "counter",
+      "from": 15,
+      "to": 32,
+      "suffix": "°C",
+      "x": 90,
+      "y": 170,
+      "size": 24,
+      "color": "red",
+      "at": "w2",
+      "dur": 1.0
+     },
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 270,
+      "w": 180,
+      "h": 80,
+      "fill": "brown",
+      "at": "w6",
+      "in": "slide_u"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Et les voitures des officiels soulèvent des nuages de poussière.",
+   "shot": {
+    "els": [
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 270,
+      "w": 180,
+      "h": 80,
+      "fill": "brown"
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "....########....",
+       "...#..#....#....",
+       "..#...#.....#...",
+       "################",
+       "#++##########++#",
+       "################",
+       "..oo........oo..",
+       "..oo........oo.."
+      ],
+      "colors": {
+       "#": "black",
+       "+": "yellow",
+       "o": "grey2"
+      },
+      "px": 4,
+      "x": -40,
+      "y": 225,
+      "move": [
+       {
+        "to": [
+         220,
+         225
+        ],
+        "at": "w1",
+        "dur": 2.5,
+        "ease": "linear"
+       }
+      ]
+     },
+     {
+      "type": "particles",
+      "kind": "smoke",
+      "x": 90,
+      "y": 235,
+      "w": 180,
+      "h": 80,
+      "n": 24,
+      "color": "paper2",
+      "at": "w6"
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 268,
+      "px": 2,
+      "pose": "walk",
+      "face": "closed",
+      "at": "w7",
+      "in": "fade"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Retenez bien ce détail. Sur 40 kilomètres, il n'y a que deux points d'eau.",
+   "clue": "drop",
+   "shot": {
+    "els": [
+     {
+      "type": "line",
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        150,
+        0
+       ]
+      ],
+      "x": 15,
+      "y": 200,
+      "color": "soft",
+      "in": "draw",
+      "width": 2
+     },
+     {
+      "type": "text",
+      "text": "0",
+      "x": 15,
+      "y": 215,
+      "size": 8,
+      "color": "mid"
+     },
+     {
+      "type": "text",
+      "text": "40 KM",
+      "x": 162,
+      "y": 215,
+      "size": 8,
+      "color": "mid"
+     },
+     {
+      "type": "sprite",
+      "icon": "drop",
+      "color": "blue",
+      "px": 3,
+      "x": 52,
+      "y": 180,
+      "at": "w9",
+      "in": "fall"
+     },
+     {
+      "type": "sprite",
+      "icon": "drop",
+      "color": "blue",
+      "px": 3,
+      "x": 87,
+      "y": 180,
+      "at": "w10",
+      "in": "fall"
+     },
+     {
+      "type": "text",
+      "text": "2",
+      "x": 90,
+      "y": 100,
+      "size": 24,
+      "color": "accent",
+      "s": 2,
+      "at": "w10",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "L'organisateur veut étudier la déshydratation.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "grey2",
+      "outfit": "labcoat",
+      "glasses": true,
+      "hair": "grey",
+      "x": 60,
+      "y": 270,
+      "px": 3,
+      "pose": "hold"
+     },
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 130,
+      "y": 170,
+      "size": 1.4,
+      "title": "ÉTUDE",
+      "lines": 5,
+      "check": true,
+      "at": "w2",
+      "in": "pop"
+     },
+     {
+      "type": "text",
+      "text": "DÉSHYDRATATION",
+      "x": 90,
+      "y": 70,
+      "size": 8,
+      "color": "red",
+      "at": "w4",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Thomas Hicks, 28 ans, finit par prendre la tête.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "card",
+      "x": 90,
+      "y": 100,
+      "size": 1.4,
+      "lines_text": [
+       "THOMAS HICKS",
+       "28 ANS",
+       "USA"
+      ],
+      "top": "white",
+      "in": "pop"
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 280,
+      "px": 3,
+      "pose": "walk",
+      "at": "w4",
+      "in": "slide_l"
+     },
+     {
+      "type": "text",
+      "text": "1ER",
+      "x": 145,
+      "y": 190,
+      "size": 16,
+      "color": "accent",
+      "at": "w6",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Mais en pleine course, il supplie qu'on le laisse s'allonger.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "face": "sad",
+      "pose": "sit",
+      "loop": "shake",
+      "loop_amp": 0.5
+     },
+     {
+      "type": "obj",
+      "name": "sun",
+      "x": 150,
+      "y": 70,
+      "size": 1.2
+     },
+     {
+      "type": "particles",
+      "kind": "stink",
+      "x": 90,
+      "y": 150,
+      "w": 40,
+      "h": 40,
+      "color": "accent",
+      "at": "w5"
+     },
+     {
+      "type": "text",
+      "text": "STOP...",
+      "x": 60,
+      "y": 80,
+      "size": 16,
+      "color": "soft",
+      "at": "w5",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Ses entraîneurs refusent. Et sortent leur remède.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "hat": "fedora",
+      "hat_color": "grey2",
+      "tie": "accent",
+      "x": 60,
+      "y": 275,
+      "px": 4,
+      "pose": "point",
+      "face": "neutral",
+      "in": "slide_l"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 128,
+      "y": 190,
+      "size": 1.8,
+      "color": "green2",
+      "label": "?",
+      "at": "w5",
+      "in": "pop",
+      "loop": "float"
+     },
+     {
+      "type": "obj",
+      "name": "cross",
+      "x": 150,
+      "y": 90,
+      "size": 1.2,
+      "at": "w2",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Un milligramme de strychnine. Un poison pour les rats.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 160,
+      "r": 50,
+      "color": "green"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 90,
+      "y": 170,
+      "size": 2.6,
+      "color": "green2",
+      "label": "X",
+      "liquid": "green",
+      "level": 0.5
+     },
+     {
+      "type": "text",
+      "text": "1 MG",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "accent",
+      "at": "w1",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "skull",
+      "x": 140,
+      "y": 110,
+      "size": 1.0,
+      "at": "w6",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Mélangé à du blanc d'œuf.",
+   "shot": {
+    "keep": true,
+    "drop": [],
+    "els": [
+     {
+      "type": "sprite",
+      "icon": "egg",
+      "color": "paper",
+      "px": 4,
+      "x": 40,
+      "y": 220,
+      "at": "w3",
+      "in": "fall"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Hicks repart. Puis s'effondre à nouveau.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "pose": "walk",
+      "out": {
+       "at": "w3",
+       "preset": "fall",
+       "dur": 0.4
+      }
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 275,
+      "px": 4,
+      "pose": "sit",
+      "face": "closed",
+      "at": "w3",
+      "in": "fall"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Deuxième dose. Avec, cette fois, du cognac.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "x2",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "red",
+      "in": "stamp"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 60,
+      "y": 180,
+      "size": 2.0,
+      "color": "green2",
+      "label": "X"
+     },
+     {
+      "type": "obj",
+      "name": "bottle",
+      "x": 125,
+      "y": 180,
+      "size": 2.0,
+      "color": "brown",
+      "label": "COGNAC",
+      "liquid": "orange",
+      "level": 0.7,
+      "at": "w4",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il hallucine. On doit le soutenir pour qu'il avance.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "hat": "fedora",
+      "hat_color": "grey2",
+      "tie": "accent",
+      "x": 55,
+      "y": 275,
+      "px": 3,
+      "pose": "hold"
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 275,
+      "px": 3,
+      "face": "closed",
+      "pose": "walk",
+      "loop": "sway",
+      "loop_amp": 1.5
+     },
+     {
+      "type": "person",
+      "top": "black",
+      "outfit": "suit",
+      "hat": "fedora",
+      "hat_color": "grey2",
+      "tie": "accent",
+      "x": 125,
+      "y": 275,
+      "px": 3,
+      "pose": "hold",
+      "facing": "left"
+     },
+     {
+      "type": "particles",
+      "kind": "stars",
+      "x": 90,
+      "y": 160,
+      "w": 60,
+      "h": 30,
+      "n": 12,
+      "color": "yellow",
+      "at": "w1"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Mais attendez. Quelqu'un a déjà franchi la ligne.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "MAIS\nATTENDEZ",
+      "x": 90,
+      "y": 80,
+      "size": 16,
+      "color": "accent",
+      "in": "pop"
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "#oooo",
+       "#oooo",
+       "#oooo",
+       "#....",
+       "#....",
+       "#....",
+       "#...."
+      ],
+      "colors": {
+       "#": "grey2",
+       "o": "accent"
+      },
+      "px": 5,
+      "x": 140,
+      "y": 220,
+      "at": "w4"
+     },
+     {
+      "type": "line",
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        180,
+        0
+       ]
+      ],
+      "x": 0,
+      "y": 262,
+      "color": "white",
+      "dash": true,
+      "at": "w4",
+      "in": "draw"
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "grey2",
+      "hair": "hair2",
+      "x": 90,
+      "y": 262,
+      "px": 3,
+      "pose": "arms_up",
+      "face": "happy",
+      "at": "w6",
+      "in": "slide_l"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Fred Lorz. Acclamé en héros.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "grey2",
+      "hair": "hair2",
+      "x": 90,
+      "y": 245,
+      "px": 4,
+      "pose": "arms_up",
+      "face": "happy"
+     },
+     {
+      "type": "obj",
+      "name": "crowd",
+      "x": 90,
+      "y": 290,
+      "n": 7,
+      "w": 180,
+      "size": 1.2,
+      "cheer": true
+     },
+     {
+      "type": "particles",
+      "kind": "confetti",
+      "x": 90,
+      "y": 140,
+      "w": 170,
+      "h": 200,
+      "n": 30,
+      "at": "w2"
+     },
+     {
+      "type": "text",
+      "text": "FRED LORZ",
+      "x": 90,
+      "y": 70,
+      "size": 16,
+      "color": "accent",
+      "in": "type"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Vous vous souvenez de la poussière des voitures? Lorz a fait 18 kilomètres dans l'une d'elles.",
+   "shot": {
+    "els": [
+     {
+      "type": "rect",
+      "x": 90,
+      "y": 270,
+      "w": 180,
+      "h": 80,
+      "fill": "brown"
+     },
+     {
+      "type": "sprite",
+      "art": [
+       "....########....",
+       "...#..#....#....",
+       "..#...#.....#...",
+       "################",
+       "#++##########++#",
+       "################",
+       "..oo........oo..",
+       "..oo........oo.."
+      ],
+      "colors": {
+       "#": "black",
+       "+": "yellow",
+       "o": "grey2"
+      },
+      "px": 5,
+      "x": -50,
+      "y": 225,
+      "move": [
+       {
+        "to": [
+         90,
+         225
+        ],
+        "at": "w9",
+        "dur": 1.0,
+        "ease": "out"
+       }
+      ]
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "grey2",
+      "hair": "hair2",
+      "x": 82,
+      "y": 215,
+      "px": 1,
+      "face": "happy",
+      "at": "w9"
+     },
+     {
+      "type": "counter",
+      "from": 0,
+      "to": 18,
+      "suffix": " KM",
+      "x": 90,
+      "y": 100,
+      "size": 24,
+      "color": "red",
+      "at": "w11",
+      "dur": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "text": "Il est démasqué juste avant de recevoir la médaille.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "card",
+      "x": 90,
+      "y": 150,
+      "size": 1.6,
+      "lines_text": [
+       "FRED LORZ",
+       "MARATHON"
+      ],
+      "top": "white",
+      "hair": "hair2"
+     },
+     {
+      "type": "text",
+      "text": "TRICHEUR",
+      "x": 95,
+      "y": 175,
+      "size": 16,
+      "color": "red",
+      "box": "red",
+      "at": "w2",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Hicks termine en 3 heures 28. Il a perdu près de 4 kilos.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "clock",
+      "x": 55,
+      "y": 150,
+      "size": 1.6,
+      "speed": 40
+     },
+     {
+      "type": "text",
+      "text": "3H28",
+      "x": 55,
+      "y": 205,
+      "size": 16,
+      "color": "accent",
+      "at": "w3",
+      "in": "pop"
+     },
+     {
+      "type": "obj",
+      "name": "scale",
+      "x": 130,
+      "y": 170,
+      "size": 2.0,
+      "needle": 0.15,
+      "at": "w6",
+      "in": "pop"
+     },
+     {
+      "type": "text",
+      "text": "-4 KG",
+      "x": 130,
+      "y": 205,
+      "size": 16,
+      "color": "red",
+      "at": "w10",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Sur 32 coureurs, seuls 14 arrivent.",
+   "shot": {
+    "els": [
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 18.0,
+      "y": 130,
+      "px": 1,
+      "at": 0.0
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 38.5,
+      "y": 130,
+      "px": 1,
+      "at": 0.05
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 59.0,
+      "y": 130,
+      "px": 1,
+      "at": 0.1
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 79.5,
+      "y": 130,
+      "px": 1,
+      "at": 0.15
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 100.0,
+      "y": 130,
+      "px": 1,
+      "at": 0.2
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 120.5,
+      "y": 130,
+      "px": 1,
+      "at": 0.25
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 141.0,
+      "y": 130,
+      "px": 1,
+      "at": 0.3
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 161.5,
+      "y": 130,
+      "px": 1,
+      "at": 0.35
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 18.0,
+      "y": 175,
+      "px": 1,
+      "at": 0.4
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 38.5,
+      "y": 175,
+      "px": 1,
+      "at": 0.45
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 59.0,
+      "y": 175,
+      "px": 1,
+      "at": 0.5
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 79.5,
+      "y": 175,
+      "px": 1,
+      "at": 0.55
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 100.0,
+      "y": 175,
+      "px": 1,
+      "at": 0.6
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 120.5,
+      "y": 175,
+      "px": 1,
+      "at": 0.65
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 141.0,
+      "y": 175,
+      "px": 1,
+      "at": 0.7
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 161.5,
+      "y": 175,
+      "px": 1,
+      "at": 0.75
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 18.0,
+      "y": 220,
+      "px": 1,
+      "at": 0.8
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 38.5,
+      "y": 220,
+      "px": 1,
+      "at": 0.85
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 59.0,
+      "y": 220,
+      "px": 1,
+      "at": 0.9
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 79.5,
+      "y": 220,
+      "px": 1,
+      "at": 0.95
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 100.0,
+      "y": 220,
+      "px": 1,
+      "at": 1.0
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 120.5,
+      "y": 220,
+      "px": 1,
+      "at": 1.05
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 141.0,
+      "y": 220,
+      "px": 1,
+      "at": 1.1
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 161.5,
+      "y": 220,
+      "px": 1,
+      "at": 1.15
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 18.0,
+      "y": 265,
+      "px": 1,
+      "at": 1.2
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 38.5,
+      "y": 265,
+      "px": 1,
+      "at": 1.25
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 59.0,
+      "y": 265,
+      "px": 1,
+      "at": 1.3
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 79.5,
+      "y": 265,
+      "px": 1,
+      "at": 1.35
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 100.0,
+      "y": 265,
+      "px": 1,
+      "at": 1.4
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 120.5,
+      "y": 265,
+      "px": 1,
+      "at": 1.45
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 141.0,
+      "y": 265,
+      "px": 1,
+      "at": 1.5
+     },
+     {
+      "type": "person",
+      "top": "grey2",
+      "pants": "grey2",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 161.5,
+      "y": 265,
+      "px": 1,
+      "at": 1.55
+     },
+     {
+      "type": "text",
+      "text": "14 / 32",
+      "x": 90,
+      "y": 70,
+      "size": 24,
+      "color": "accent",
+      "at": "w4",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Le plus fou? À l'époque, personne n'y voit un scandale.",
+   "shot": {
+    "els": [
+     {
+      "type": "text",
+      "text": "LE PLUS FOU",
+      "x": 90,
+      "y": 150,
+      "size": 24,
+      "color": "accent",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Le rapport officiel conclut même que les drogues aident beaucoup les athlètes.",
+   "shot": {
+    "els": [
+     {
+      "type": "obj",
+      "name": "paper",
+      "x": 90,
+      "y": 165,
+      "size": 2.2,
+      "title": "RAPPORT 1904",
+      "lines": 7,
+      "sign": true,
+      "in": "rise"
+     },
+     {
+      "type": "obj",
+      "name": "check",
+      "x": 125,
+      "y": 215,
+      "size": 1.6,
+      "at": "w8",
+      "in": "stamp"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Je trouve ça dingue. Il a gagné l'or, mais il aurait pu y laisser la vie.",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 170,
+      "r": 60
+     },
+     {
+      "type": "person",
+      "top": "white",
+      "pants": "white",
+      "hair": "hair",
+      "beard": "mustache",
+      "skin": "skin",
+      "x": 90,
+      "y": 270,
+      "px": 4,
+      "face": "happy",
+      "pose": "arms_up"
+     },
+     {
+      "type": "obj",
+      "name": "coin",
+      "x": 50,
+      "y": 110,
+      "size": 1.6,
+      "color": "yellow",
+      "at": "w6",
+      "spin": true
+     },
+     {
+      "type": "obj",
+      "name": "skull",
+      "x": 135,
+      "y": 110,
+      "size": 1.4,
+      "at": "w11",
+      "in": "pop"
+     }
+    ]
+   }
+  },
+  {
+   "text": "Alors la prochaine fois que vous buvez un verre d'eau après le sport, rappelez-vous que…",
+   "shot": {
+    "els": [
+     {
+      "type": "glow",
+      "x": 90,
+      "y": 160,
+      "r": 55,
+      "color": "blue"
+     },
+     {
+      "type": "sprite",
+      "icon": "glass",
+      "color": "blue",
+      "px": 6,
+      "x": 90,
+      "y": 165,
+      "at": "w6",
+      "in": "pop",
+      "loop": "pulse"
+     },
+     {
+      "type": "particles",
+      "kind": "bubbles",
+      "x": 90,
+      "y": 165,
+      "w": 30,
+      "h": 40,
+      "color": "white",
+      "at": "w6"
+     }
+    ]
+   }
+  }
+ ],
+ "post": {
+  "caption": "1904 : le vainqueur du marathon olympique est dopé à la mort-aux-rats… et le rapport officiel trouve ça très bien. Tu aurais tenu combien de kilomètres ?",
+  "youtube_title": "Champion olympique… dopé à la mort-aux-rats (1904)",
+  "linkedin_text": "1904 : Thomas Hicks gagne le marathon olympique sous strychnine et cognac. Le rapport officiel conclut que « les drogues aident les athlètes ».\nCe qu'une époque trouve normal, la suivante le juge inacceptable.\nQuelles pratiques de votre secteur paraîtront absurdes dans 20 ans ?",
+  "hashtags": [
+   "#marathon",
+   "#sport",
+   "#histoirevraie",
+   "#dopage",
+   "#running",
+   "#jeuxolympiques"
+  ]
+ },
+ "sources": [
+  "Charles J.P. Lucas, The Olympic Games 1904 (1905)",
+  "Smithsonian Magazine, « The 1904 Olympic Marathon May Have Been the Strangest Ever » (2016)"
+ ]
+}

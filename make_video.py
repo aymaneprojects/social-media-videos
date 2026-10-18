@@ -5,7 +5,8 @@ Marques : brands/<marque>/brand.json (nourlio : nutrition, sport, sante · pile-
 
 Exemples :
   python make_video.py --brand nourlio --domain nutrition --topic "Angus Barbieri, 382 jours sans manger"
-  python make_video.py --brand nourlio --domain sport --next 3          # 3 sujets suivants de la banque
+  python make_video.py --brand nourlio --domain sport --find-topics 10  # étape 1 : nouveaux sujets
+  python make_video.py --brand nourlio --domain sport --next 3          # étapes 2-3 : 3 vidéos animées
   python make_video.py --story stories/hicks-1904.json                  # histoire écrite à la main
   python make_video.py --topic "..." --write-only                       # script seul, à relire
   python make_video.py --story ... --publish                            # + Instagram/YouTube/LinkedIn
@@ -22,8 +23,10 @@ import sys
 from pathlib import Path
 
 from pixelstory import brand as brands
-from pixelstory import images, publish, voice, writer
+from pixelstory import images, publish, topics as topicbank, voice, writer
+from pixelstory.anim import writer as anim_writer
 from pixelstory.config import ROOT, Config
+from pixelstory.anim.render import render_anim
 from pixelstory.render import render_video
 
 OUT = ROOT / "output"
@@ -80,7 +83,7 @@ def render_story(story: dict, cfg: Config, args) -> Path:
     print(f"   durée voix : {dur:.1f} s")
 
     imgs = {}
-    if not args.no_images:
+    if not args.no_images and story.get("format") != "anim":
         if cfg.openrouter_key:
             print("🎨 Illustrations (OpenRouter)")
             imgs = images.generate_all(story, cfg, ROOT / ".cache" / "images")
@@ -88,8 +91,12 @@ def render_story(story: dict, cfg: Config, args) -> Path:
             print("🎨 pas de OPENROUTER_API_KEY → scènes procédurales uniquement")
 
     print("🎬 Rendu vidéo…")
-    out = render_video(story, voice_path, words, dur, imgs, out_dir / "video.mp4",
-                       music=Path(args.music) if args.music else None, preview_every=args.preview_every)
+    if story.get("format") == "anim":
+        out = render_anim(story, voice_path, words, dur, out_dir / "video.mp4",
+                          music=Path(args.music) if args.music else None, preview_every=args.preview_every)
+    else:
+        out = render_video(story, voice_path, words, dur, imgs, out_dir / "video.mp4",
+                           music=Path(args.music) if args.music else None, preview_every=args.preview_every)
     post = story.get("post", {})
     caption = (post.get("caption", "") + "\n\n" + " ".join(post.get("hashtags", []))).strip()
     (out_dir / "caption.txt").write_text(caption + "\n", encoding="utf-8")
@@ -105,11 +112,11 @@ def do_publish(out_dir: Path, story: dict, b: dict, cfg: Config, args):
     user = cfg.upload_post_user or pub.get("user", "")
     if args.dry_run:
         print("🧪 Simulation : champs envoyés à Upload-Post")
-        for k, v in publish.build_fields(story, platforms, user, args.schedule, pub.get("timezone")):
+        for k, v in publish.build_fields(story, platforms, user, args.schedule, pub.get("timezone"), args.queue):
             print(f"   {k} = {v[:110]!r}{'…' if len(v) > 110 else ''}")
         return
     publish.publish(out_dir / "video.mp4", story, cfg.upload_post_key, user, platforms,
-                    schedule=args.schedule, timezone=pub.get("timezone"), force=args.force)
+                    schedule=args.schedule, timezone=pub.get("timezone"), force=args.force, queue=args.queue)
 
 
 def pop_topics(path: Path, n: int) -> list[str]:
@@ -131,9 +138,13 @@ def main():
     src.add_argument("--batch", help="fichier texte : un sujet par ligne")
     src.add_argument("--next", type=int, metavar="N", help="N sujets suivants de brands/<marque>/topics-<domaine>.txt")
     src.add_argument("--ideas", type=int, metavar="N", help="propose N idées d'histoires pour le domaine")
+    src.add_argument("--find-topics", type=int, metavar="N",
+                     help="cherche N nouveaux sujets et les ajoute à la banque du domaine")
     src.add_argument("--publish-only", metavar="DOSSIER", help="publie une vidéo déjà rendue (output/...)")
     ap.add_argument("--brand", help="marque (dossier de brands/), défaut : nourlio")
     ap.add_argument("--domain", help="domaine de la marque (nutrition, sport, sante, business...)")
+    ap.add_argument("--format", default="anim", choices=["anim", "hud"],
+                    help="anim : animations uniques par histoire (défaut) · hud : ancien format à scènes types")
     ap.add_argument("--write-only", action="store_true", help="écrit le script JSON sans faire la vidéo")
     ap.add_argument("--no-verify", action="store_true", help="saute la passe de fact-checking")
     ap.add_argument("--no-images", action="store_true", help="pas d'illustrations générées")
@@ -145,6 +156,8 @@ def main():
     ap.add_argument("--publish", action="store_true", help="publie via Upload-Post après le rendu")
     ap.add_argument("--platforms", help="ex. instagram,youtube,linkedin (défaut : ceux de la marque)")
     ap.add_argument("--schedule", help="date de publication ISO, ex. 2026-10-20T18:00 (fuseau de la marque)")
+    ap.add_argument("--queue", action="store_true",
+                    help="place la vidéo dans le prochain créneau libre du calendrier Upload-Post de la marque")
     ap.add_argument("--dry-run", action="store_true", help="affiche ce qui serait publié sans rien envoyer")
     ap.add_argument("--force", action="store_true", help="republie même si déjà publié")
     args = ap.parse_args()
@@ -167,6 +180,13 @@ def main():
         for t in writer.suggest_topics(cfg, dom, args.ideas):
             print("-", t)
         return
+    if args.find_topics:
+        path = brands.topics_file(b, dom)
+        new = topicbank.find_topics(cfg, b, dom, path, args.find_topics)
+        print(f"🔎 {len(new)} nouveaux sujets ajoutés à {path} :")
+        for t in new:
+            print("  +", t)
+        return
 
     if args.topic:
         topics = [args.topic]
@@ -177,7 +197,10 @@ def main():
                   if l.strip() and not l.startswith("#")]
     for topic in topics:
         print(f"✍️  Script [{b['name']} · {dom['label']}] : {topic}")
-        story = writer.write_story(topic, cfg, b, dom, verify=not args.no_verify)
+        if args.format == "anim":
+            story = anim_writer.write_anim_story(topic, cfg, b, dom, verify=not args.no_verify)
+        else:
+            story = writer.write_story(topic, cfg, b, dom, verify=not args.no_verify)
         story.update(brand=b["slug"], domain=dom["slug"])
         STORIES.mkdir(exist_ok=True)
         p = STORIES / b["slug"] / dom["slug"] / f"{slug(story.get('id') or topic)}.json"
