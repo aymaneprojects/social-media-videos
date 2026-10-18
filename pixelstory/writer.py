@@ -71,6 +71,7 @@ RÉPONDS UNIQUEMENT avec un objet JSON valide :
   ],
   "post": {{"caption": "légende Instagram (2-3 phrases, accroche + question pour les commentaires)",
             "youtube_title": "titre YouTube Shorts accrocheur, 70 caractères max, sans hashtag",
+            "cover_text": "texte de miniature, 5 mots max, choc",
             "linkedin_text": "texte LinkedIn : 3 à 5 lignes courtes, l'histoire en une phrase puis la leçon à en tirer (ton professionnel, sans emoji excessif)",
             "hashtags": ["#... (6 à 10, en français, liés au domaine)"]}},
   "sources": ["références (livre, article, archive) qui appuient les faits"]

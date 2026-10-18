@@ -28,6 +28,8 @@ Exemples complets, faits à la main avec le moteur (un univers différent par vi
 `stories/nourlio/nutrition/scorbut-lind.json`, `stories/nourlio/sante/phineas-gage.json`,
 `stories/nourlio/sport/hicks-1904-anim.json`, `stories/pile-ou-face/business/lustig-tour-eiffel.json`.
 
+Plan de lancement et rythme de publication : [`docs/plan-lancement.md`](docs/plan-lancement.md).
+
 ## Pipeline technique
 
 | Étape | Outil |
@@ -114,6 +116,7 @@ pixelstory/brand.py    chargement des marques et domaines
 pixelstory/theme.py    palette dérivée de (fond, accent)
 pixelstory/publish.py  publication Upload-Post
 pixelstory/topics.py   étape 1 : recherche de sujets sans doublon
+pixelstory/cover.py    miniature (couverture Reels, vignette YouTube/LinkedIn)
 pixelstory/anim/       moteur d'animation (engine, library, render) + scénariste storyboard (writer)
 pixelstory/writer.py   prompts OpenRouter du format hud (+ fact-check partagé)
 pixelstory/voice.py    ElevenLabs / OpenRouter TTS + alignement Whisper / Edge (secours)

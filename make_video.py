@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 from pixelstory import brand as brands
-from pixelstory import images, publish, topics as topicbank, voice, writer
+from pixelstory import cover, images, publish, topics as topicbank, voice, writer
 from pixelstory.anim import writer as anim_writer
 from pixelstory.config import ROOT, Config
 from pixelstory.anim.render import render_anim
@@ -97,6 +97,8 @@ def render_story(story: dict, cfg: Config, args) -> Path:
     else:
         out = render_video(story, voice_path, words, dur, imgs, out_dir / "video.mp4",
                            music=Path(args.music) if args.music else None, preview_every=args.preview_every)
+    cv = cover.make_cover(out, story)
+    print(f"🖼️  miniature : {cv}")
     post = story.get("post", {})
     caption = (post.get("caption", "") + "\n\n" + " ".join(post.get("hashtags", []))).strip()
     (out_dir / "caption.txt").write_text(caption + "\n", encoding="utf-8")

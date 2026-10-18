@@ -38,7 +38,7 @@ FORMULE NARRATIVE (≈ 1 min 45, 270 à 330 mots, 26 à 36 beats, une phrase cou
 Réponds UNIQUEMENT en JSON :
 {{"id": "slug-sans-accents", "title": "...",
   "beats": [{{"text": "..."}}, {{"text": "...", "clue": "lemon"}}],
-  "post": {{"caption": "légende Instagram (2-3 phrases + question)", "youtube_title": "≤ 70 caractères",
+  "post": {{"caption": "légende Instagram (2-3 phrases + question)", "youtube_title": "≤ 70 caractères", "cover_text": "texte de miniature, 5 mots max, choc",
             "linkedin_text": "3-5 lignes, la leçon pro à en tirer", "hashtags": ["#...", "..."]}},
   "sources": ["..."]}}"""
 
@@ -152,6 +152,8 @@ def sanitize(sh: dict) -> dict:
         els.append(e)
     out = dict(sh) if isinstance(sh, dict) else {}
     out["els"] = els
+    if not els and not out.get("keep"):
+        out["keep"] = True  # plan absent ou vide : on prolonge la scène précédente
     return out
 
 

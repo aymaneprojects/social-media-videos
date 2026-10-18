@@ -66,9 +66,19 @@ def publish(video: Path, story: dict, api_key: str, user: str, platforms: list[s
     headers = {"Authorization": f"Apikey {api_key}", "Idempotency-Key": rid}
     fields += [("request_id", rid), ("external_id", story.get("id", video.parent.name))]
     print(f"📤 Upload-Post → {', '.join(platforms)} (profil « {user} »)" + (f", programmé {schedule}" if schedule else ""))
-    with open(video, "rb") as f:
-        r = requests.post(f"{API}/upload", headers=headers, data=fields,
-                          files={"video": (video.name, f, "video/mp4")}, timeout=600)
+    files = [("video", (video.name, open(video, "rb"), "video/mp4"))]
+    cover = video.parent / "cover.jpg"
+    if cover.exists():
+        # couverture du Reel + vignette YouTube / LinkedIn (≤ 2 Mo)
+        if "instagram" in platforms:
+            files.append(("cover_image", ("cover.jpg", open(cover, "rb"), "image/jpeg")))
+        if "youtube" in platforms or "linkedin" in platforms:
+            files.append(("thumbnail", ("cover.jpg", open(cover, "rb"), "image/jpeg")))
+    try:
+        r = requests.post(f"{API}/upload", headers=headers, data=fields, files=files, timeout=600)
+    finally:
+        for _, (_, fh, _) in files:
+            fh.close()
     try:
         data = r.json()
     except ValueError:
