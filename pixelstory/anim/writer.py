@@ -60,7 +60,8 @@ PLAN : {{"els": [...], "keep": false, "drop": [], "update": {{}}, "chip": "1747"
 - person : {{"type":"person","px":3,"x":90,"y":260 (= pieds),"top":couleur,"pants","skin":"skin|skin2|skin3",
   "hair","hair_style":"short|long|bun|curly|bald","hat":"fedora|top|cap|helmet|bicorne","hat_color",
   "beard":true|"mustache","glasses":true,"outfit":"shirt|suit|coat|labcoat|dress|uniform","tie",
-  "pose":"stand|walk|arms_up|point|hold|think|sit","face":"neutral|happy|sad|surprised|closed","facing":"right|left"}}
+  "pose":"stand|walk|arms_up|point|hold|think|sit","face":"neutral|happy|sad|surprised|closed","facing":"right|left",
+  "build":"normal|large"}}
 - obj : {{"type":"obj","name":NOM,"size":1.5,"color":...}} avec NOM parmi : {objects}
   Options utiles : paper{{title,lines,check,sign}}, card{{lines_text:[...]}}, calendar{{text}}, building{{w,h,sign}},
   bottle{{label,liquid,level}}, barrel{{label}}, coin{{spin,symbol}}, bag{{symbol}}, crowd{{n,w,tops,cheer}},
@@ -124,7 +125,7 @@ def write_board(story: dict, cfg: Config) -> dict:
         if shots:
             ctx += "\nDernier plan déjà composé (pour la continuité) :\n" + json.dumps(shots[-1], ensure_ascii=False)
         res = _parse_json(_chat(cfg, [{"role": "system", "content": sys_}, {"role": "user", "content": ctx}],
-                                temperature=0.7, max_tokens=16000))
+                                temperature=0.7, max_tokens=8000, model=cfg.board_model))
         got = res.get("shots", [])
         shots += (got + [{}] * len(chunk))[: len(chunk)]
     for b, sh in zip(story["beats"], shots):

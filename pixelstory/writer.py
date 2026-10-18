@@ -7,6 +7,7 @@ import re
 import time
 
 import requests
+from pathlib import Path
 
 from .config import Config
 from .scenes import SCENE_DOCS
@@ -86,10 +87,11 @@ Vérifie chaque fait : dates, lieux, noms, âges, chiffres, enchaînement des é
 Réponds UNIQUEMENT avec le JSON corrigé."""
 
 
-def _chat(cfg: Config, messages, temperature=0.8, max_tokens=8000) -> str:
+def _chat(cfg: Config, messages, temperature=0.8, max_tokens=8000, model: str | None = None) -> str:
     if not cfg.openrouter_key:
         raise RuntimeError("OPENROUTER_API_KEY manquante (voir .env.example)")
-    body = {"model": cfg.writer_model, "messages": messages, "temperature": temperature, "max_tokens": max_tokens}
+    body = {"model": model or cfg.writer_model, "messages": messages, "temperature": temperature,
+            "max_tokens": max_tokens}
     for attempt in range(4):
         r = requests.post("https://openrouter.ai/api/v1/chat/completions", json=body, timeout=300,
                           headers={"Authorization": f"Bearer {cfg.openrouter_key}",
@@ -104,9 +106,21 @@ def _chat(cfg: Config, messages, temperature=0.8, max_tokens=8000) -> str:
 
 
 def _parse_json(txt: str) -> dict:
+    """Lit la réponse JSON du modèle ; répare les petites erreurs (guillemets, virgules)."""
+    raw = txt
     txt = re.sub(r"^```(?:json)?|```$", "", txt.strip(), flags=re.M).strip()
     a, b = txt.find("{"), txt.rfind("}")
-    return json.loads(txt[a:b + 1])
+    try:
+        return json.loads(txt[a:b + 1])
+    except json.JSONDecodeError:
+        import json_repair
+        fixed = json_repair.loads(txt[a:b + 1])
+        if isinstance(fixed, dict) and fixed:
+            return fixed
+        dump = Path(__file__).resolve().parent.parent / ".cache" / f"reponse-illisible-{int(time.time())}.txt"
+        dump.parent.mkdir(exist_ok=True)
+        dump.write_text(raw, encoding="utf-8")
+        raise RuntimeError(f"Réponse JSON illisible, sauvegardée dans {dump}")
 
 
 def word_count(story: dict) -> int:

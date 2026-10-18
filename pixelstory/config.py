@@ -24,6 +24,7 @@ def _load_dotenv():
 class Config:
     openrouter_key: str
     writer_model: str
+    board_model: str
     image_model: str
     tts_model: str
     tts_voice: str
@@ -44,6 +45,9 @@ class Config:
         return cls(
             openrouter_key=g("OPENROUTER_API_KEY", ""),
             writer_model=g("OPENROUTER_WRITER_MODEL", "anthropic/claude-sonnet-5.5"),
+            # Storyboard : par défaut le même modèle ; un modèle moins cher (ex. anthropic/claude-haiku-5.5)
+            # réduit fortement le coût par vidéo
+            board_model=g("OPENROUTER_BOARD_MODEL", g("OPENROUTER_WRITER_MODEL", "anthropic/claude-sonnet-5.5")),
             image_model=g("OPENROUTER_IMAGE_MODEL", "google/gemini-3.1-flash-image"),
             # Voix ElevenLabs servie par OpenRouter (/api/v1/audio/speech)
             tts_model=g("OPENROUTER_TTS_MODEL", "elevenlabs/eleven-multilingual-v2"),

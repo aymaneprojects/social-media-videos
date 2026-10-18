@@ -72,6 +72,10 @@ def person(d: ImageDraw.ImageDraw, el: dict, x: float, y: float):
         R(3, 15, 8, 1, "black")
         R(4, 12, 1, 1, "yellow")
         R(9, 12, 1, 1, "yellow")
+    if el.get("build") == "large":  # silhouette corpulente : torse et ventre élargis
+        R(1, 12, 12, 10 if not long_ else 12, top)
+        R(12, 12, 1, 10, topd)
+        R(2, 20, 10, 2, top)
     # bras
     if pose == "arms_up":
         R(1, 4, 2, 8, top)

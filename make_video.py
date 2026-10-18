@@ -217,7 +217,18 @@ def main():
     for topic in topics:
         print(f"✍️  Script [{b['name']} · {dom['label']}] : {topic}")
         if args.format == "anim":
-            story = anim_writer.write_anim_story(topic, cfg, b, dom, verify=not args.no_verify)
+            # le script est sauvegardé avant le storyboard : une relance ne le repaie pas
+            draft = STORIES / b["slug"] / dom["slug"] / f"_brouillon-{slug(topic)}.json"
+            if draft.exists():
+                print(f"   ↺ script repris depuis {draft}")
+                script = json.loads(draft.read_text(encoding="utf-8"))
+            else:
+                script = anim_writer.write_script(topic, cfg, b, dom, verify=not args.no_verify)
+                draft.parent.mkdir(parents=True, exist_ok=True)
+                draft.write_text(json.dumps(script, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"   🎬 storyboard ({cfg.board_model})")
+            story = anim_writer.write_board(script, cfg)
+            draft.unlink(missing_ok=True)
         else:
             story = writer.write_story(topic, cfg, b, dom, verify=not args.no_verify)
         story.update(brand=b["slug"], domain=dom["slug"])
