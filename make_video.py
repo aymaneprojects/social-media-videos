@@ -59,6 +59,8 @@ def prepare(story: dict, args, cfg: Config):
                  handle=b.get("handle", ""), tagline=b.get("tagline", ""))
     if b.get("voice") and "ELEVENLABS_VOICE" not in os.environ:
         cfg.voice_id = b["voice"]
+    if b.get("openrouter_voice") and "OPENROUTER_TTS_VOICE" not in os.environ:
+        cfg.tts_voice = b["openrouter_voice"]
     return b, d
 
 

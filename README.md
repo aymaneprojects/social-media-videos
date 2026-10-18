@@ -50,7 +50,7 @@ cp .env.example .env                # puis renseigner les clés
 
 - `OPENROUTER_API_KEY` : script, illustrations, et voix si tu n'as pas de clé ElevenLabs.
 - `UPLOAD_POST_API_KEY` : publication. Dans Upload-Post, crée un profil par marque (`nourlio`, `pileouface`) et connecte-y les comptes Instagram, YouTube et LinkedIn.
-- `ELEVENLABS_API_KEY` : nécessaire pour Benjamin et Yarik. OpenRouter ne sert que les 21 voix ElevenLabs par défaut (daniel, george, adam…). Le script cherche la voix par son nom dans ton compte ou dans la Voice Library et l'ajoute automatiquement. Tu peux aussi mettre directement un `voice_id` dans `ELEVENLABS_VOICE`. Attention : l'accès aux voix de la Voice Library par l'API demande un abonnement ElevenLabs payant.
+- `ELEVENLABS_API_KEY` (optionnelle) : seulement pour Benjamin et Yarik. Sans elle, la voix ElevenLabs est servie par OpenRouter avec la voix définie dans `brand.json` (`openrouter_voice` : daniel pour Nourlio, george pour Pile ou Face). OpenRouter ne sert que les 21 voix ElevenLabs par défaut (daniel, george, adam…). Le script cherche la voix par son nom dans ton compte ou dans la Voice Library et l'ajoute automatiquement. Tu peux aussi mettre directement un `voice_id` dans `ELEVENLABS_VOICE`. Attention : l'accès aux voix de la Voice Library par l'API demande un abonnement ElevenLabs payant.
 
 ## Utilisation
 

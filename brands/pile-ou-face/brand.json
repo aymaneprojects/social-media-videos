@@ -22,12 +22,27 @@
       "bg": "#120F0A",
       "accent": "#F5C542",
       "focus": "argent, fortunes et faillites, entrepreneurs, arnaques célèbres, bulles spéculatives, décisions à plusieurs milliards, coulisses d'entreprises",
-      "icons": ["coin", "dollar", "chart", "building", "scale", "clock", "trophy", "skull", "flag"]
+      "icons": [
+        "coin",
+        "dollar",
+        "chart",
+        "building",
+        "scale",
+        "clock",
+        "trophy",
+        "skull",
+        "flag"
+      ]
     }
   },
   "publish": {
     "user": "pileouface",
-    "platforms": ["instagram", "youtube", "linkedin"],
+    "platforms": [
+      "instagram",
+      "youtube",
+      "linkedin"
+    ],
     "timezone": "Europe/Paris"
-  }
+  },
+  "openrouter_voice": "george"
 }

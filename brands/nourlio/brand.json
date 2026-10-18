@@ -21,26 +21,61 @@
       "bg": "#0D1210",
       "accent": "#B8F53A",
       "focus": "alimentation, régimes extrêmes, vitamines et carences, expériences scientifiques sur la nourriture, scandales de l'industrie agroalimentaire, mythes alimentaires",
-      "icons": ["apple", "egg", "bread", "fish", "plate", "flask", "scale", "pill", "glass"]
+      "icons": [
+        "apple",
+        "egg",
+        "bread",
+        "fish",
+        "plate",
+        "flask",
+        "scale",
+        "pill",
+        "glass"
+      ]
     },
     "sport": {
       "label": "SPORT",
       "bg": "#0D1210",
       "accent": "#FF7A1F",
       "focus": "exploits sportifs, records, dopage, coulisses de compétitions, athlètes hors normes, limites du corps à l'effort",
-      "icons": ["runner", "medal", "trophy", "flag", "dumbbell", "bike", "clock", "heart", "syringe"]
+      "icons": [
+        "runner",
+        "medal",
+        "trophy",
+        "flag",
+        "dumbbell",
+        "bike",
+        "clock",
+        "heart",
+        "syringe"
+      ]
     },
     "sante": {
       "label": "SANTÉ",
       "bg": "#0D1210",
       "accent": "#2EE6D6",
       "focus": "corps humain, médecine, survie extrême, cerveau, sommeil, découvertes médicales, autoexpérimentations de chercheurs",
-      "icons": ["heart", "brain", "dna", "pill", "syringe", "bed", "skull", "drop", "flask"]
+      "icons": [
+        "heart",
+        "brain",
+        "dna",
+        "pill",
+        "syringe",
+        "bed",
+        "skull",
+        "drop",
+        "flask"
+      ]
     }
   },
   "publish": {
     "user": "nourlio",
-    "platforms": ["instagram", "youtube", "linkedin"],
+    "platforms": [
+      "instagram",
+      "youtube",
+      "linkedin"
+    ],
     "timezone": "Europe/Paris"
-  }
+  },
+  "openrouter_voice": "daniel"
 }
