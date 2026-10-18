@@ -123,15 +123,20 @@ def do_publish(out_dir: Path, story: dict, b: dict, cfg: Config, args):
                     schedule=args.schedule, timezone=pub.get("timezone"), force=args.force, queue=args.queue)
 
 
-def pop_topics(path: Path, n: int) -> list[str]:
-    """Prend les n premiers sujets non faits et les déplace dans *.done.txt."""
+def next_topics(path: Path, n: int) -> list[str]:
+    """Les n premiers sujets non faits de la banque (sans les retirer)."""
     lines = [l for l in path.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
-    take, rest = lines[:n], lines[n:]
-    path.write_text("\n".join(rest) + ("\n" if rest else ""), encoding="utf-8")
-    done = path.with_suffix(".done.txt")
-    with open(done, "a", encoding="utf-8") as f:
-        f.writelines(t + "\n" for t in take)
-    return take
+    return lines[:n]
+
+
+def mark_done(path: Path, topic: str):
+    """Déplace un sujet traité de la banque vers *.done.txt (seulement après réussite)."""
+    lines = path.read_text(encoding="utf-8").splitlines()
+    if topic in lines:
+        lines.remove(topic)
+    path.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
+    with open(path.with_suffix(".done.txt"), "a", encoding="utf-8") as f:
+        f.write(topic + "\n")
 
 
 def main():
@@ -195,7 +200,7 @@ def main():
     if args.topic:
         topics = [args.topic]
     elif args.next:
-        topics = pop_topics(brands.topics_file(b, dom), args.next)
+        topics = next_topics(brands.topics_file(b, dom), args.next)
     else:
         topics = [l.strip() for l in Path(args.batch).read_text(encoding="utf-8").splitlines()
                   if l.strip() and not l.startswith("#")]
@@ -216,6 +221,8 @@ def main():
         if not args.write_only:
             args.brand, args.domain = b["slug"], dom["slug"]
             render_story(story, cfg, args)
+        if args.next:
+            mark_done(brands.topics_file(b, dom), topic)
 
 
 if __name__ == "__main__":
